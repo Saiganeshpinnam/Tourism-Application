@@ -1,2242 +1,2242 @@
 [
   {
     "id": 1,
-    "name": "Andhra Pradesh Place 1",
+    "name": "Tirupati",
     "state": "Andhra Pradesh",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 2,
-    "name": "Andhra Pradesh Place 2",
+    "name": "Araku Valley",
     "state": "Andhra Pradesh",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 3,
-    "name": "Andhra Pradesh Place 3",
+    "name": "Visakhapatnam",
     "state": "Andhra Pradesh",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 4,
-    "name": "Andhra Pradesh Place 4",
+    "name": "Lepakshi",
     "state": "Andhra Pradesh",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 5,
-    "name": "Andhra Pradesh Place 5",
+    "name": "Borra Caves",
     "state": "Andhra Pradesh",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 6,
-    "name": "Andhra Pradesh Place 6",
+    "name": "Horsley Hills",
     "state": "Andhra Pradesh",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 7,
-    "name": "Andhra Pradesh Place 7",
+    "name": "Amaravati",
     "state": "Andhra Pradesh",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 8,
-    "name": "Andhra Pradesh Place 8",
+    "name": "Papikondalu",
     "state": "Andhra Pradesh",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 9,
-    "name": "Andhra Pradesh Place 9",
+    "name": "Belum Caves",
     "state": "Andhra Pradesh",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 10,
-    "name": "Andhra Pradesh Place 10",
+    "name": "Srisailam",
     "state": "Andhra Pradesh",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Andhra Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Andhra Pradesh"
   },
   {
     "id": 11,
-    "name": "Arunachal Pradesh Place 1",
+    "name": "Tawang",
     "state": "Arunachal Pradesh",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 12,
-    "name": "Arunachal Pradesh Place 2",
+    "name": "Ziro Valley",
     "state": "Arunachal Pradesh",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 13,
-    "name": "Arunachal Pradesh Place 3",
+    "name": "Bomdila",
     "state": "Arunachal Pradesh",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 14,
-    "name": "Arunachal Pradesh Place 4",
+    "name": "Dirang",
     "state": "Arunachal Pradesh",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 15,
-    "name": "Arunachal Pradesh Place 5",
+    "name": "Itanagar",
     "state": "Arunachal Pradesh",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 16,
-    "name": "Arunachal Pradesh Place 6",
+    "name": "Pasighat",
     "state": "Arunachal Pradesh",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 17,
-    "name": "Arunachal Pradesh Place 7",
+    "name": "Roing",
     "state": "Arunachal Pradesh",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 18,
-    "name": "Arunachal Pradesh Place 8",
+    "name": "Mechuka",
     "state": "Arunachal Pradesh",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 19,
-    "name": "Arunachal Pradesh Place 9",
+    "name": "Tezu",
     "state": "Arunachal Pradesh",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 20,
-    "name": "Arunachal Pradesh Place 10",
+    "name": "Namdapha",
     "state": "Arunachal Pradesh",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Arunachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Arunachal Pradesh"
   },
   {
     "id": 21,
-    "name": "Assam Place 1",
+    "name": "Kaziranga",
     "state": "Assam",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 22,
-    "name": "Assam Place 2",
+    "name": "Guwahati",
     "state": "Assam",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 23,
-    "name": "Assam Place 3",
+    "name": "Majuli",
     "state": "Assam",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 24,
-    "name": "Assam Place 4",
+    "name": "Sivasagar",
     "state": "Assam",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 25,
-    "name": "Assam Place 5",
+    "name": "Tezpur",
     "state": "Assam",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 26,
-    "name": "Assam Place 6",
+    "name": "Manas",
     "state": "Assam",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 27,
-    "name": "Assam Place 7",
+    "name": "Haflong",
     "state": "Assam",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 28,
-    "name": "Assam Place 8",
+    "name": "Jorhat",
     "state": "Assam",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 29,
-    "name": "Assam Place 9",
+    "name": "Dibrugarh",
     "state": "Assam",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 30,
-    "name": "Assam Place 10",
+    "name": "Barpeta",
     "state": "Assam",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Assam"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Assam"
   },
   {
     "id": 31,
-    "name": "Bihar Place 1",
+    "name": "Bodh Gaya",
     "state": "Bihar",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 32,
-    "name": "Bihar Place 2",
+    "name": "Nalanda",
     "state": "Bihar",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 33,
-    "name": "Bihar Place 3",
+    "name": "Patna",
     "state": "Bihar",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 34,
-    "name": "Bihar Place 4",
+    "name": "Rajgir",
     "state": "Bihar",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 35,
-    "name": "Bihar Place 5",
+    "name": "Vaishali",
     "state": "Bihar",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 36,
-    "name": "Bihar Place 6",
+    "name": "Gaya",
     "state": "Bihar",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 37,
-    "name": "Bihar Place 7",
+    "name": "Sasaram",
     "state": "Bihar",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 38,
-    "name": "Bihar Place 8",
+    "name": "Munger",
     "state": "Bihar",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 39,
-    "name": "Bihar Place 9",
+    "name": "Bhagalpur",
     "state": "Bihar",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 40,
-    "name": "Bihar Place 10",
+    "name": "Sitamarhi",
     "state": "Bihar",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Bihar"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Bihar"
   },
   {
     "id": 41,
-    "name": "Chhattisgarh Place 1",
+    "name": "Chitrakote Falls",
     "state": "Chhattisgarh",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 42,
-    "name": "Chhattisgarh Place 2",
+    "name": "Bastar",
     "state": "Chhattisgarh",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 43,
-    "name": "Chhattisgarh Place 3",
+    "name": "Raipur",
     "state": "Chhattisgarh",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 44,
-    "name": "Chhattisgarh Place 4",
+    "name": "Jagdalpur",
     "state": "Chhattisgarh",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 45,
-    "name": "Chhattisgarh Place 5",
+    "name": "Mainpat",
     "state": "Chhattisgarh",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 46,
-    "name": "Chhattisgarh Place 6",
+    "name": "Sirpur",
     "state": "Chhattisgarh",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 47,
-    "name": "Chhattisgarh Place 7",
+    "name": "Kanger Valley",
     "state": "Chhattisgarh",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 48,
-    "name": "Chhattisgarh Place 8",
+    "name": "Dhamtari",
     "state": "Chhattisgarh",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 49,
-    "name": "Chhattisgarh Place 9",
+    "name": "Korba",
     "state": "Chhattisgarh",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 50,
-    "name": "Chhattisgarh Place 10",
+    "name": "Bilaspur",
     "state": "Chhattisgarh",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Chhattisgarh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Chhattisgarh"
   },
   {
     "id": 51,
-    "name": "Goa Place 1",
+    "name": "Baga Beach",
     "state": "Goa",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 52,
-    "name": "Goa Place 2",
+    "name": "Calangute",
     "state": "Goa",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 53,
-    "name": "Goa Place 3",
+    "name": "Anjuna",
     "state": "Goa",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 54,
-    "name": "Goa Place 4",
+    "name": "Colva",
     "state": "Goa",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 55,
-    "name": "Goa Place 5",
+    "name": "Fort Aguada",
     "state": "Goa",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 56,
-    "name": "Goa Place 6",
+    "name": "Dudhsagar",
     "state": "Goa",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 57,
-    "name": "Goa Place 7",
+    "name": "Panaji",
     "state": "Goa",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 58,
-    "name": "Goa Place 8",
+    "name": "Vagator",
     "state": "Goa",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 59,
-    "name": "Goa Place 9",
+    "name": "Candolim",
     "state": "Goa",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 60,
-    "name": "Goa Place 10",
+    "name": "Palolem",
     "state": "Goa",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Goa"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Goa"
   },
   {
     "id": 61,
-    "name": "Gujarat Place 1",
+    "name": "Ahmedabad",
     "state": "Gujarat",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 62,
-    "name": "Gujarat Place 2",
+    "name": "Gir National Park",
     "state": "Gujarat",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 63,
-    "name": "Gujarat Place 3",
+    "name": "Somnath",
     "state": "Gujarat",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 64,
-    "name": "Gujarat Place 4",
+    "name": "Dwarka",
     "state": "Gujarat",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 65,
-    "name": "Gujarat Place 5",
+    "name": "Kutch",
     "state": "Gujarat",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 66,
-    "name": "Gujarat Place 6",
+    "name": "Vadodara",
     "state": "Gujarat",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 67,
-    "name": "Gujarat Place 7",
+    "name": "Saputara",
     "state": "Gujarat",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 68,
-    "name": "Gujarat Place 8",
+    "name": "Junagadh",
     "state": "Gujarat",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 69,
-    "name": "Gujarat Place 9",
+    "name": "Bhuj",
     "state": "Gujarat",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 70,
-    "name": "Gujarat Place 10",
+    "name": "Porbandar",
     "state": "Gujarat",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Gujarat"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Gujarat"
   },
   {
     "id": 71,
-    "name": "Haryana Place 1",
+    "name": "Gurgaon",
     "state": "Haryana",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 72,
-    "name": "Haryana Place 2",
+    "name": "Kurukshetra",
     "state": "Haryana",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 73,
-    "name": "Haryana Place 3",
+    "name": "Panipat",
     "state": "Haryana",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 74,
-    "name": "Haryana Place 4",
+    "name": "Faridabad",
     "state": "Haryana",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 75,
-    "name": "Haryana Place 5",
+    "name": "Morni Hills",
     "state": "Haryana",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 76,
-    "name": "Haryana Place 6",
+    "name": "Panchkula",
     "state": "Haryana",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 77,
-    "name": "Haryana Place 7",
+    "name": "Sonipat",
     "state": "Haryana",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 78,
-    "name": "Haryana Place 8",
+    "name": "Ambala",
     "state": "Haryana",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 79,
-    "name": "Haryana Place 9",
+    "name": "Karnal",
     "state": "Haryana",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 80,
-    "name": "Haryana Place 10",
+    "name": "Rohtak",
     "state": "Haryana",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Haryana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Haryana"
   },
   {
     "id": 81,
-    "name": "Himachal Pradesh Place 1",
+    "name": "Shimla",
     "state": "Himachal Pradesh",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 82,
-    "name": "Himachal Pradesh Place 2",
+    "name": "Manali",
     "state": "Himachal Pradesh",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 83,
-    "name": "Himachal Pradesh Place 3",
+    "name": "Dharamshala",
     "state": "Himachal Pradesh",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 84,
-    "name": "Himachal Pradesh Place 4",
+    "name": "Dalhousie",
     "state": "Himachal Pradesh",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 85,
-    "name": "Himachal Pradesh Place 5",
+    "name": "Kullu",
     "state": "Himachal Pradesh",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 86,
-    "name": "Himachal Pradesh Place 6",
+    "name": "Spiti",
     "state": "Himachal Pradesh",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 87,
-    "name": "Himachal Pradesh Place 7",
+    "name": "Kasol",
     "state": "Himachal Pradesh",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 88,
-    "name": "Himachal Pradesh Place 8",
+    "name": "Chamba",
     "state": "Himachal Pradesh",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 89,
-    "name": "Himachal Pradesh Place 9",
+    "name": "Kinnaur",
     "state": "Himachal Pradesh",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 90,
-    "name": "Himachal Pradesh Place 10",
+    "name": "Solan",
     "state": "Himachal Pradesh",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Himachal Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Himachal Pradesh"
   },
   {
     "id": 91,
-    "name": "Jharkhand Place 1",
+    "name": "Ranchi",
     "state": "Jharkhand",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 92,
-    "name": "Jharkhand Place 2",
+    "name": "Netarhat",
     "state": "Jharkhand",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 93,
-    "name": "Jharkhand Place 3",
+    "name": "Betla Park",
     "state": "Jharkhand",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 94,
-    "name": "Jharkhand Place 4",
+    "name": "Deoghar",
     "state": "Jharkhand",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 95,
-    "name": "Jharkhand Place 5",
+    "name": "Jamshedpur",
     "state": "Jharkhand",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 96,
-    "name": "Jharkhand Place 6",
+    "name": "Hazaribagh",
     "state": "Jharkhand",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 97,
-    "name": "Jharkhand Place 7",
+    "name": "Parasnath",
     "state": "Jharkhand",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 98,
-    "name": "Jharkhand Place 8",
+    "name": "Bokaro",
     "state": "Jharkhand",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 99,
-    "name": "Jharkhand Place 9",
+    "name": "Giridih",
     "state": "Jharkhand",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 100,
-    "name": "Jharkhand Place 10",
+    "name": "Dhanbad",
     "state": "Jharkhand",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Jharkhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Jharkhand"
   },
   {
     "id": 101,
-    "name": "Karnataka Place 1",
+    "name": "Hampi",
     "state": "Karnataka",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 102,
-    "name": "Karnataka Place 2",
+    "name": "Mysore",
     "state": "Karnataka",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 103,
-    "name": "Karnataka Place 3",
+    "name": "Coorg",
     "state": "Karnataka",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 104,
-    "name": "Karnataka Place 4",
+    "name": "Gokarna",
     "state": "Karnataka",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 105,
-    "name": "Karnataka Place 5",
+    "name": "Jog Falls",
     "state": "Karnataka",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 106,
-    "name": "Karnataka Place 6",
+    "name": "Chikmagalur",
     "state": "Karnataka",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 107,
-    "name": "Karnataka Place 7",
+    "name": "Badami",
     "state": "Karnataka",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 108,
-    "name": "Karnataka Place 8",
+    "name": "Belur",
     "state": "Karnataka",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 109,
-    "name": "Karnataka Place 9",
+    "name": "Halebidu",
     "state": "Karnataka",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 110,
-    "name": "Karnataka Place 10",
+    "name": "Kabini",
     "state": "Karnataka",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Karnataka"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Karnataka"
   },
   {
     "id": 111,
-    "name": "Kerala Place 1",
+    "name": "Munnar",
     "state": "Kerala",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 112,
-    "name": "Kerala Place 2",
+    "name": "Alleppey",
     "state": "Kerala",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 113,
-    "name": "Kerala Place 3",
+    "name": "Wayanad",
     "state": "Kerala",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 114,
-    "name": "Kerala Place 4",
+    "name": "Kovalam",
     "state": "Kerala",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 115,
-    "name": "Kerala Place 5",
+    "name": "Varkala",
     "state": "Kerala",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 116,
-    "name": "Kerala Place 6",
+    "name": "Thekkady",
     "state": "Kerala",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 117,
-    "name": "Kerala Place 7",
+    "name": "Kumarakom",
     "state": "Kerala",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 118,
-    "name": "Kerala Place 8",
+    "name": "Bekal",
     "state": "Kerala",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 119,
-    "name": "Kerala Place 9",
+    "name": "Athirappilly",
     "state": "Kerala",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 120,
-    "name": "Kerala Place 10",
+    "name": "Vagamon",
     "state": "Kerala",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Kerala"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Kerala"
   },
   {
     "id": 121,
-    "name": "Madhya Pradesh Place 1",
+    "name": "Khajuraho",
     "state": "Madhya Pradesh",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 122,
-    "name": "Madhya Pradesh Place 2",
+    "name": "Bhopal",
     "state": "Madhya Pradesh",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 123,
-    "name": "Madhya Pradesh Place 3",
+    "name": "Indore",
     "state": "Madhya Pradesh",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 124,
-    "name": "Madhya Pradesh Place 4",
+    "name": "Gwalior",
     "state": "Madhya Pradesh",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 125,
-    "name": "Madhya Pradesh Place 5",
+    "name": "Ujjain",
     "state": "Madhya Pradesh",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 126,
-    "name": "Madhya Pradesh Place 6",
+    "name": "Orchha",
     "state": "Madhya Pradesh",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 127,
-    "name": "Madhya Pradesh Place 7",
+    "name": "Pachmarhi",
     "state": "Madhya Pradesh",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 128,
-    "name": "Madhya Pradesh Place 8",
+    "name": "Sanchi",
     "state": "Madhya Pradesh",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 129,
-    "name": "Madhya Pradesh Place 9",
+    "name": "Jabalpur",
     "state": "Madhya Pradesh",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 130,
-    "name": "Madhya Pradesh Place 10",
+    "name": "Bandhavgarh",
     "state": "Madhya Pradesh",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Madhya Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Madhya Pradesh"
   },
   {
     "id": 131,
-    "name": "Maharashtra Place 1",
+    "name": "Mumbai",
     "state": "Maharashtra",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 132,
-    "name": "Maharashtra Place 2",
+    "name": "Pune",
     "state": "Maharashtra",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 133,
-    "name": "Maharashtra Place 3",
+    "name": "Lonavala",
     "state": "Maharashtra",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 134,
-    "name": "Maharashtra Place 4",
+    "name": "Mahabaleshwar",
     "state": "Maharashtra",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 135,
-    "name": "Maharashtra Place 5",
+    "name": "Ajanta",
     "state": "Maharashtra",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 136,
-    "name": "Maharashtra Place 6",
+    "name": "Ellora",
     "state": "Maharashtra",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 137,
-    "name": "Maharashtra Place 7",
+    "name": "Nashik",
     "state": "Maharashtra",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 138,
-    "name": "Maharashtra Place 8",
+    "name": "Shirdi",
     "state": "Maharashtra",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 139,
-    "name": "Maharashtra Place 9",
+    "name": "Alibaug",
     "state": "Maharashtra",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 140,
-    "name": "Maharashtra Place 10",
+    "name": "Tadoba",
     "state": "Maharashtra",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Maharashtra"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Maharashtra"
   },
   {
     "id": 141,
-    "name": "Manipur Place 1",
+    "name": "Imphal",
     "state": "Manipur",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 142,
-    "name": "Manipur Place 2",
+    "name": "Loktak Lake",
     "state": "Manipur",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 143,
-    "name": "Manipur Place 3",
+    "name": "Ukhrul",
     "state": "Manipur",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 144,
-    "name": "Manipur Place 4",
+    "name": "Churachandpur",
     "state": "Manipur",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 145,
-    "name": "Manipur Place 5",
+    "name": "Thoubal",
     "state": "Manipur",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 146,
-    "name": "Manipur Place 6",
+    "name": "Bishnupur",
     "state": "Manipur",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 147,
-    "name": "Manipur Place 7",
+    "name": "Tamenglong",
     "state": "Manipur",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 148,
-    "name": "Manipur Place 8",
+    "name": "Moreh",
     "state": "Manipur",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 149,
-    "name": "Manipur Place 9",
+    "name": "Kakching",
     "state": "Manipur",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 150,
-    "name": "Manipur Place 10",
+    "name": "Senapati",
     "state": "Manipur",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Manipur"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Manipur"
   },
   {
     "id": 151,
-    "name": "Meghalaya Place 1",
+    "name": "Shillong",
     "state": "Meghalaya",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 152,
-    "name": "Meghalaya Place 2",
+    "name": "Cherrapunji",
     "state": "Meghalaya",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 153,
-    "name": "Meghalaya Place 3",
+    "name": "Dawki",
     "state": "Meghalaya",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 154,
-    "name": "Meghalaya Place 4",
+    "name": "Mawlynnong",
     "state": "Meghalaya",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 155,
-    "name": "Meghalaya Place 5",
+    "name": "Nongriat",
     "state": "Meghalaya",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 156,
-    "name": "Meghalaya Place 6",
+    "name": "Tura",
     "state": "Meghalaya",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 157,
-    "name": "Meghalaya Place 7",
+    "name": "Jowai",
     "state": "Meghalaya",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 158,
-    "name": "Meghalaya Place 8",
+    "name": "Umiam Lake",
     "state": "Meghalaya",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 159,
-    "name": "Meghalaya Place 9",
+    "name": "Laitlum",
     "state": "Meghalaya",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 160,
-    "name": "Meghalaya Place 10",
+    "name": "Baghmara",
     "state": "Meghalaya",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Meghalaya"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Meghalaya"
   },
   {
     "id": 161,
-    "name": "Mizoram Place 1",
+    "name": "Aizawl",
     "state": "Mizoram",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 162,
-    "name": "Mizoram Place 2",
+    "name": "Lunglei",
     "state": "Mizoram",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 163,
-    "name": "Mizoram Place 3",
+    "name": "Champhai",
     "state": "Mizoram",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 164,
-    "name": "Mizoram Place 4",
+    "name": "Serchhip",
     "state": "Mizoram",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 165,
-    "name": "Mizoram Place 5",
+    "name": "Saiha",
     "state": "Mizoram",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 166,
-    "name": "Mizoram Place 6",
+    "name": "Kolasib",
     "state": "Mizoram",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 167,
-    "name": "Mizoram Place 7",
+    "name": "Reiek",
     "state": "Mizoram",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 168,
-    "name": "Mizoram Place 8",
+    "name": "Hmuifang",
     "state": "Mizoram",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 169,
-    "name": "Mizoram Place 9",
+    "name": "Vantawng Falls",
     "state": "Mizoram",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 170,
-    "name": "Mizoram Place 10",
+    "name": "Thenzawl",
     "state": "Mizoram",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Mizoram"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Mizoram"
   },
   {
     "id": 171,
-    "name": "Nagaland Place 1",
+    "name": "Kohima",
     "state": "Nagaland",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 172,
-    "name": "Nagaland Place 2",
+    "name": "Dimapur",
     "state": "Nagaland",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 173,
-    "name": "Nagaland Place 3",
+    "name": "Mon",
     "state": "Nagaland",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 174,
-    "name": "Nagaland Place 4",
+    "name": "Wokha",
     "state": "Nagaland",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 175,
-    "name": "Nagaland Place 5",
+    "name": "Mokokchung",
     "state": "Nagaland",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 176,
-    "name": "Nagaland Place 6",
+    "name": "Tuensang",
     "state": "Nagaland",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 177,
-    "name": "Nagaland Place 7",
+    "name": "Phek",
     "state": "Nagaland",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 178,
-    "name": "Nagaland Place 8",
+    "name": "Zunheboto",
     "state": "Nagaland",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 179,
-    "name": "Nagaland Place 9",
+    "name": "Kiphire",
     "state": "Nagaland",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 180,
-    "name": "Nagaland Place 10",
+    "name": "Longleng",
     "state": "Nagaland",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Nagaland"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Nagaland"
   },
   {
     "id": 181,
-    "name": "Odisha Place 1",
+    "name": "Puri",
     "state": "Odisha",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 182,
-    "name": "Odisha Place 2",
+    "name": "Bhubaneswar",
     "state": "Odisha",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 183,
-    "name": "Odisha Place 3",
+    "name": "Konark",
     "state": "Odisha",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 184,
-    "name": "Odisha Place 4",
+    "name": "Chilika Lake",
     "state": "Odisha",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 185,
-    "name": "Odisha Place 5",
+    "name": "Cuttack",
     "state": "Odisha",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 186,
-    "name": "Odisha Place 6",
+    "name": "Rourkela",
     "state": "Odisha",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 187,
-    "name": "Odisha Place 7",
+    "name": "Simlipal",
     "state": "Odisha",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 188,
-    "name": "Odisha Place 8",
+    "name": "Daringbadi",
     "state": "Odisha",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 189,
-    "name": "Odisha Place 9",
+    "name": "Gopalpur",
     "state": "Odisha",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 190,
-    "name": "Odisha Place 10",
+    "name": "Sambalpur",
     "state": "Odisha",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Odisha"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Odisha"
   },
   {
     "id": 191,
-    "name": "Punjab Place 1",
+    "name": "Amritsar",
     "state": "Punjab",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 192,
-    "name": "Punjab Place 2",
+    "name": "Ludhiana",
     "state": "Punjab",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 193,
-    "name": "Punjab Place 3",
+    "name": "Patiala",
     "state": "Punjab",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 194,
-    "name": "Punjab Place 4",
+    "name": "Jalandhar",
     "state": "Punjab",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 195,
-    "name": "Punjab Place 5",
+    "name": "Bathinda",
     "state": "Punjab",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 196,
-    "name": "Punjab Place 6",
+    "name": "Anandpur Sahib",
     "state": "Punjab",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 197,
-    "name": "Punjab Place 7",
+    "name": "Pathankot",
     "state": "Punjab",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 198,
-    "name": "Punjab Place 8",
+    "name": "Hoshiarpur",
     "state": "Punjab",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 199,
-    "name": "Punjab Place 9",
+    "name": "Moga",
     "state": "Punjab",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 200,
-    "name": "Punjab Place 10",
+    "name": "Firozpur",
     "state": "Punjab",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Punjab"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Punjab"
   },
   {
     "id": 201,
-    "name": "Rajasthan Place 1",
+    "name": "Jaipur",
     "state": "Rajasthan",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 202,
-    "name": "Rajasthan Place 2",
+    "name": "Udaipur",
     "state": "Rajasthan",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 203,
-    "name": "Rajasthan Place 3",
+    "name": "Jaisalmer",
     "state": "Rajasthan",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 204,
-    "name": "Rajasthan Place 4",
+    "name": "Pushkar",
     "state": "Rajasthan",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 205,
-    "name": "Rajasthan Place 5",
+    "name": "Mount Abu",
     "state": "Rajasthan",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 206,
-    "name": "Rajasthan Place 6",
+    "name": "Ajmer",
     "state": "Rajasthan",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 207,
-    "name": "Rajasthan Place 7",
+    "name": "Chittorgarh",
     "state": "Rajasthan",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 208,
-    "name": "Rajasthan Place 8",
+    "name": "Bikaner",
     "state": "Rajasthan",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 209,
-    "name": "Rajasthan Place 9",
+    "name": "Ranthambore",
     "state": "Rajasthan",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 210,
-    "name": "Rajasthan Place 10",
+    "name": "Alwar",
     "state": "Rajasthan",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Rajasthan"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Rajasthan"
   },
   {
     "id": 211,
-    "name": "Sikkim Place 1",
+    "name": "Gangtok",
     "state": "Sikkim",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 212,
-    "name": "Sikkim Place 2",
+    "name": "Pelling",
     "state": "Sikkim",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 213,
-    "name": "Sikkim Place 3",
+    "name": "Yumthang",
     "state": "Sikkim",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 214,
-    "name": "Sikkim Place 4",
+    "name": "Lachung",
     "state": "Sikkim",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 215,
-    "name": "Sikkim Place 5",
+    "name": "Lachen",
     "state": "Sikkim",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 216,
-    "name": "Sikkim Place 6",
+    "name": "Namchi",
     "state": "Sikkim",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 217,
-    "name": "Sikkim Place 7",
+    "name": "Ravangla",
     "state": "Sikkim",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 218,
-    "name": "Sikkim Place 8",
+    "name": "Zuluk",
     "state": "Sikkim",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 219,
-    "name": "Sikkim Place 9",
+    "name": "Nathula",
     "state": "Sikkim",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 220,
-    "name": "Sikkim Place 10",
+    "name": "Gurudongmar",
     "state": "Sikkim",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Sikkim"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Sikkim"
   },
   {
     "id": 221,
-    "name": "Tamil Nadu Place 1",
+    "name": "Chennai",
     "state": "Tamil Nadu",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 222,
-    "name": "Tamil Nadu Place 2",
+    "name": "Ooty",
     "state": "Tamil Nadu",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 223,
-    "name": "Tamil Nadu Place 3",
+    "name": "Kodaikanal",
     "state": "Tamil Nadu",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 224,
-    "name": "Tamil Nadu Place 4",
+    "name": "Madurai",
     "state": "Tamil Nadu",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 225,
-    "name": "Tamil Nadu Place 5",
+    "name": "Rameswaram",
     "state": "Tamil Nadu",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 226,
-    "name": "Tamil Nadu Place 6",
+    "name": "Mahabalipuram",
     "state": "Tamil Nadu",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 227,
-    "name": "Tamil Nadu Place 7",
+    "name": "Yercaud",
     "state": "Tamil Nadu",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 228,
-    "name": "Tamil Nadu Place 8",
+    "name": "Coimbatore",
     "state": "Tamil Nadu",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 229,
-    "name": "Tamil Nadu Place 9",
+    "name": "Kanyakumari",
     "state": "Tamil Nadu",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 230,
-    "name": "Tamil Nadu Place 10",
+    "name": "Thanjavur",
     "state": "Tamil Nadu",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Tamil Nadu"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tamil Nadu"
   },
   {
     "id": 231,
-    "name": "Telangana Place 1",
+    "name": "Hyderabad",
     "state": "Telangana",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 232,
-    "name": "Telangana Place 2",
+    "name": "Warangal",
     "state": "Telangana",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 233,
-    "name": "Telangana Place 3",
+    "name": "Nizamabad",
     "state": "Telangana",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 234,
-    "name": "Telangana Place 4",
+    "name": "Karimnagar",
     "state": "Telangana",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 235,
-    "name": "Telangana Place 5",
+    "name": "Khammam",
     "state": "Telangana",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 236,
-    "name": "Telangana Place 6",
+    "name": "Adilabad",
     "state": "Telangana",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 237,
-    "name": "Telangana Place 7",
+    "name": "Nalgonda",
     "state": "Telangana",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 238,
-    "name": "Telangana Place 8",
+    "name": "Medak",
     "state": "Telangana",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 239,
-    "name": "Telangana Place 9",
+    "name": "Mahbubnagar",
     "state": "Telangana",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 240,
-    "name": "Telangana Place 10",
+    "name": "Sangareddy",
     "state": "Telangana",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Telangana"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Telangana"
   },
   {
     "id": 241,
-    "name": "Tripura Place 1",
+    "name": "Agartala",
     "state": "Tripura",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 242,
-    "name": "Tripura Place 2",
+    "name": "Udaipur",
     "state": "Tripura",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 243,
-    "name": "Tripura Place 3",
+    "name": "Unakoti",
     "state": "Tripura",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 244,
-    "name": "Tripura Place 4",
+    "name": "Neermahal",
     "state": "Tripura",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 245,
-    "name": "Tripura Place 5",
+    "name": "Jampui Hills",
     "state": "Tripura",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 246,
-    "name": "Tripura Place 6",
+    "name": "Kailashahar",
     "state": "Tripura",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 247,
-    "name": "Tripura Place 7",
+    "name": "Dharmanagar",
     "state": "Tripura",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 248,
-    "name": "Tripura Place 8",
+    "name": "Ambassa",
     "state": "Tripura",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 249,
-    "name": "Tripura Place 9",
+    "name": "Belonia",
     "state": "Tripura",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 250,
-    "name": "Tripura Place 10",
+    "name": "Sabroom",
     "state": "Tripura",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Tripura"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Tripura"
   },
   {
     "id": 251,
-    "name": "Uttar Pradesh Place 1",
+    "name": "Taj Mahal",
     "state": "Uttar Pradesh",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 252,
-    "name": "Uttar Pradesh Place 2",
+    "name": "Varanasi",
     "state": "Uttar Pradesh",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 253,
-    "name": "Uttar Pradesh Place 3",
+    "name": "Ayodhya",
     "state": "Uttar Pradesh",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 254,
-    "name": "Uttar Pradesh Place 4",
+    "name": "Lucknow",
     "state": "Uttar Pradesh",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 255,
-    "name": "Uttar Pradesh Place 5",
+    "name": "Agra Fort",
     "state": "Uttar Pradesh",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 256,
-    "name": "Uttar Pradesh Place 6",
+    "name": "Mathura",
     "state": "Uttar Pradesh",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 257,
-    "name": "Uttar Pradesh Place 7",
+    "name": "Vrindavan",
     "state": "Uttar Pradesh",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 258,
-    "name": "Uttar Pradesh Place 8",
+    "name": "Fatehpur Sikri",
     "state": "Uttar Pradesh",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 259,
-    "name": "Uttar Pradesh Place 9",
+    "name": "Sarnath",
     "state": "Uttar Pradesh",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 260,
-    "name": "Uttar Pradesh Place 10",
+    "name": "Jhansi",
     "state": "Uttar Pradesh",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Uttar Pradesh"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttar Pradesh"
   },
   {
     "id": 261,
-    "name": "Uttarakhand Place 1",
+    "name": "Nainital",
     "state": "Uttarakhand",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 262,
-    "name": "Uttarakhand Place 2",
+    "name": "Mussoorie",
     "state": "Uttarakhand",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 263,
-    "name": "Uttarakhand Place 3",
+    "name": "Rishikesh",
     "state": "Uttarakhand",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 264,
-    "name": "Uttarakhand Place 4",
+    "name": "Haridwar",
     "state": "Uttarakhand",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 265,
-    "name": "Uttarakhand Place 5",
+    "name": "Auli",
     "state": "Uttarakhand",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 266,
-    "name": "Uttarakhand Place 6",
+    "name": "Kedarnath",
     "state": "Uttarakhand",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 267,
-    "name": "Uttarakhand Place 7",
+    "name": "Badrinath",
     "state": "Uttarakhand",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 268,
-    "name": "Uttarakhand Place 8",
+    "name": "Almora",
     "state": "Uttarakhand",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 269,
-    "name": "Uttarakhand Place 9",
+    "name": "Pithoragarh",
     "state": "Uttarakhand",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 270,
-    "name": "Uttarakhand Place 10",
+    "name": "Tehri",
     "state": "Uttarakhand",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in Uttarakhand"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in Uttarakhand"
   },
   {
     "id": 271,
-    "name": "West Bengal Place 1",
+    "name": "Kolkata",
     "state": "West Bengal",
-    "latitude": 21.0,
-    "longitude": 76.0,
-    "description": "Popular tourist place 1 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 272,
-    "name": "West Bengal Place 2",
+    "name": "Darjeeling",
     "state": "West Bengal",
-    "latitude": 22.0,
-    "longitude": 77.0,
-    "description": "Popular tourist place 2 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 273,
-    "name": "West Bengal Place 3",
+    "name": "Sundarbans",
     "state": "West Bengal",
-    "latitude": 23.0,
-    "longitude": 78.0,
-    "description": "Popular tourist place 3 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 274,
-    "name": "West Bengal Place 4",
+    "name": "Digha",
     "state": "West Bengal",
-    "latitude": 24.0,
-    "longitude": 79.0,
-    "description": "Popular tourist place 4 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 275,
-    "name": "West Bengal Place 5",
+    "name": "Kalimpong",
     "state": "West Bengal",
-    "latitude": 25.0,
-    "longitude": 80.0,
-    "description": "Popular tourist place 5 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 276,
-    "name": "West Bengal Place 6",
+    "name": "Siliguri",
     "state": "West Bengal",
-    "latitude": 26.0,
-    "longitude": 81.0,
-    "description": "Popular tourist place 6 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 277,
-    "name": "West Bengal Place 7",
+    "name": "Murshidabad",
     "state": "West Bengal",
-    "latitude": 27.0,
-    "longitude": 82.0,
-    "description": "Popular tourist place 7 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 278,
-    "name": "West Bengal Place 8",
+    "name": "Santiniketan",
     "state": "West Bengal",
-    "latitude": 28.0,
-    "longitude": 83.0,
-    "description": "Popular tourist place 8 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 279,
-    "name": "West Bengal Place 9",
+    "name": "Cooch Behar",
     "state": "West Bengal",
-    "latitude": 29.0,
-    "longitude": 84.0,
-    "description": "Popular tourist place 9 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   },
   {
     "id": 280,
-    "name": "West Bengal Place 10",
+    "name": "Malda",
     "state": "West Bengal",
-    "latitude": 30.0,
-    "longitude": 85.0,
-    "description": "Popular tourist place 10 in West Bengal"
+    "latitude": 20.0,
+    "longitude": 75.0,
+    "description": "Famous tourist place in West Bengal"
   }
 ]
