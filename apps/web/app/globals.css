@@ -20,7 +20,11 @@
 }
 
 body {
-  background: var(--background);
+  background-color: #f9fafb;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  letter-spacing: -0.5px;
 }
