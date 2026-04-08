@@ -1,20 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Link from "next/link";
 import { searchGooglePlaces } from "@/services/api";
 
 export default function DistrictPage({ params }: any) {
+  // ✅ FIX: unwrap params
+  const resolvedParams = use(params);
+
   const [places, setPlaces] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [district, setDistrict] = useState("");
   const [state, setState] = useState("");
+  const [search, setSearch] = useState("");
+
+  const BASE_URL =
+    process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080";
 
   useEffect(() => {
     async function load() {
       try {
-        const resolvedParams = await params;
-
         const districtName = resolvedParams?.district;
         const stateName = resolvedParams?.state;
 
@@ -23,16 +28,19 @@ export default function DistrictPage({ params }: any) {
           return;
         }
 
-        setDistrict(districtName);
-        setState(stateName);
+        const decodedDistrict = decodeURIComponent(districtName);
+        const decodedState = decodeURIComponent(stateName);
+
+        setDistrict(decodedDistrict);
+        setState(decodedState);
 
         let data = await searchGooglePlaces(
-          `${districtName} ${stateName} tourist attractions India`
+          `${decodedDistrict} ${decodedState} tourist attractions India`
         );
 
         if (!data?.results?.length) {
           data = await searchGooglePlaces(
-            `${stateName} famous tourist places`
+            `${decodedState} famous tourist places`
           );
         }
 
@@ -45,26 +53,34 @@ export default function DistrictPage({ params }: any) {
     }
 
     load();
-  }, [params]);
+  }, [resolvedParams]);
 
-  const BASE_URL =
-    process.env.NEXT_PUBLIC_BACKEND_URL ||
-    "http://localhost:8080";
+  const filteredPlaces = places.filter((place) =>
+    place.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">
+      <h1 className="text-3xl font-bold mb-4">
         {district}, {state}
       </h1>
 
+      <input
+        type="text"
+        placeholder="🔍 Search places..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="w-full mb-6 p-3 border rounded-xl focus:ring-2 focus:ring-blue-500"
+      />
+
       {loading && <p>Loading...</p>}
 
-      {!loading && places.length === 0 && (
+      {!loading && filteredPlaces.length === 0 && (
         <p className="text-gray-500">No places found</p>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {places.map((place: any, index: number) => {
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredPlaces.map((place: any, index: number) => {
           const photoRef = place.photos?.[0]?.photo_reference;
 
           const imageUrl = photoRef
