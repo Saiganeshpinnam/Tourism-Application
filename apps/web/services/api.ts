@@ -1,5 +1,6 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
-
+const BASE_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080";
+  console.log("BASE_URL:", BASE_URL);
 // ✅ Get all states (from your Spring Boot JSON)
 export async function getStates() {
   const res = await fetch(`${BASE_URL}/places/states`);
