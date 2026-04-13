@@ -111,6 +111,19 @@ export default function PlaceDetails({ params }: any) {
     ? `${BASE_URL}/google/photo?ref=${photoRef}`
     : "https://picsum.photos/800/400";
 
+  const handleSave = () => {
+  const saved = localStorage.getItem("favorites");
+  let favorites = saved ? JSON.parse(saved) : [];
+
+  if (!favorites.includes(place.place_id)) {
+    favorites.push(place.place_id);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    alert("Saved to favorites ❤️");
+  } else {
+    alert("Already in favorites");
+  }
+};
+
   return (
     <div className="max-w-5xl mx-auto p-6">
       {/* IMAGE */}
@@ -153,7 +166,7 @@ export default function PlaceDetails({ params }: any) {
         </button>
 
         <button
-          onClick={() => alert("Saved to favorites (next feature 🚀)")}
+          onClick={handleSave}
           className="bg-gray-200 px-6 py-3 rounded-lg hover:bg-gray-300 transition"
         >
           ❤️ Save
