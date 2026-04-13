@@ -1,37 +1,39 @@
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080";
-  console.log("BASE_URL:", BASE_URL);
-// ✅ Get all states (from your Spring Boot JSON)
-export async function getStates() {
-  const res = await fetch(`${BASE_URL}/places/states`);
-  return res.json();
-}
+const BASE_URL = "/api";
 
-// ✅ Static places (optional fallback)
-export async function getPlacesByState(state: string) {
-  const res = await fetch(`${BASE_URL}/places/state/${state}`);
-  return res.json();
-}
-
-// 🔥 GOOGLE API (SAFE VERSION — VERY IMPORTANT)
-export async function searchGooglePlaces(query: string) {
+// helper
+async function safeFetch(url: string) {
   try {
-    const res = await fetch(
-      `${BASE_URL}/google/search?query=${encodeURIComponent(query)}`
-    );
+    const res = await fetch(url);
 
-    const text = await res.text();
+    if (!res.ok) throw new Error("Request failed");
 
-    // ✅ Handle invalid JSON safely
-    try {
-      return JSON.parse(text);
-    } catch {
-      console.error("Invalid JSON from backend:", text);
-      return { results: [] };
-    }
-
+    return res;
   } catch (error) {
-    console.error("Fetch error:", error);
+    console.error("🔥 API ERROR:", error);
+    return null;
+  }
+}
+
+// states
+export async function getStates() {
+  const res = await safeFetch(`${BASE_URL}/places/states`);
+  if (!res) return [];
+  return res.json();
+}
+
+// search
+export async function searchGooglePlaces(query: string) {
+  const res = await safeFetch(
+    `${BASE_URL}/google/search?query=${encodeURIComponent(query)}`
+  );
+
+  if (!res) return { results: [] };
+
+  const text = await res.text();
+
+  try {
+    return JSON.parse(text);
+  } catch {
     return { results: [] };
   }
 }

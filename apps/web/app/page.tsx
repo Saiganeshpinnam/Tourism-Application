@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getStates, searchGooglePlaces } from "@/services/api";
+import GlobalSearch from "@/components/GlobalSearch";
 
 import HeroVideo from "@/components/HeroVideo";
 
@@ -55,13 +56,7 @@ export default function Home() {
 
       {/* 🔍 SEARCH BAR */}
       <div className="mb-10">
-        <input
-          type="text"
-          placeholder="🔍 Search places across India..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full p-4 rounded-2xl border shadow-sm focus:ring-2 focus:ring-blue-500 outline-none"
-        />
+        <GlobalSearch />
       </div>
 
      
