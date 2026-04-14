@@ -23,6 +23,21 @@ public class GooglePlacesController {
         this.restTemplate = restTemplate;
     }
 
+    @GetMapping("/nearby")
+public ResponseEntity<?> getNearbyPlaces(
+        @RequestParam double lat,
+        @RequestParam double lng
+) {
+    try {
+        String result = googleService.getNearbyPlaces(lat, lng);
+        return ResponseEntity.ok(result);
+    } catch (Exception e) {
+        return ResponseEntity
+                .internalServerError()
+                .body("{\"results\": []}");
+    }
+}
+
     // 🔥 1️⃣ SEARCH PLACES
     @GetMapping("/search")
     public ResponseEntity<?> searchPlaces(@RequestParam String query) {

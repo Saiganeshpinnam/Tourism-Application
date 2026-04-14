@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getStates, searchGooglePlaces } from "@/services/api";
 import GlobalSearch from "@/components/GlobalSearch";
-
+import NearbyPlaces from "@/components/NearbyPlaces";
 import HeroVideo from "@/components/HeroVideo";
 
 export default function Home() {
@@ -40,6 +40,8 @@ export default function Home() {
 
       {/* 🎥 HERO */}
       <HeroVideo />
+
+      <NearbyPlaces />
 
       {/* HEADER */}
       <div className="flex justify-between items-center mb-6">

@@ -37,3 +37,18 @@ export async function searchGooglePlaces(query: string) {
     return { results: [] };
   }
 }
+
+// get nearby places
+export async function getNearbyPlaces(lat: number, lng: number) {
+  const res = await fetch(
+    `/api/google/nearby?lat=${lat}&lng=${lng}`
+  );
+
+  const text = await res.text();
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    return { results: [] };
+  }
+}

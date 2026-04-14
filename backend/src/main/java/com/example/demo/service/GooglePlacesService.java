@@ -35,4 +35,15 @@ public class GooglePlacesService {
 
         return restTemplate.getForObject(url, String.class);
     }
+
+    public String getNearbyPlaces(double lat, double lng) {
+
+    String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+            + "?location=" + lat + "," + lng
+            + "&radius=5000"
+            + "&type=tourist_attraction"
+            + "&key=" + apiKey;
+
+    return restTemplate.getForObject(url, String.class);
+}
 }
