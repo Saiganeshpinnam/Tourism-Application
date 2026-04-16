@@ -1,6 +1,14 @@
-import { View, Text, FlatList, TouchableOpacity, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
 import { useEffect, useState } from "react";
-import { searchPlaces } from "../services/api";
+import axios from "axios";
+
+const BASE_URL = "http://192.168.29.236:8080";
 
 export default function DistrictScreen({ route, navigation }: any) {
   const { state } = route.params;
@@ -8,23 +16,17 @@ export default function DistrictScreen({ route, navigation }: any) {
   const [districts, setDistricts] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // 🔥 Load districts dynamically using API
   useEffect(() => {
     async function load() {
       try {
-        // 👉 We use search as fallback to extract districts
-        const data = await searchPlaces(`${state} districts India`);
+        const res = await axios.get(
+          `${BASE_URL}/places/districts?state=${state}`
+        );
 
-        // 🧠 Extract district names from results
-        const names =
-          data?.results?.map((item: any) => item.name) || [];
-
-        // ✅ Remove duplicates
-        const uniqueDistricts = Array.from(new Set(names));
-
-        setDistricts(uniqueDistricts);
+        setDistricts(res.data || []);
       } catch (err) {
-        console.error(err);
+        console.error("District API error:", err);
+        setDistricts([]);
       } finally {
         setLoading(false);
       }

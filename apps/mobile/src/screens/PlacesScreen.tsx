@@ -1,28 +1,27 @@
 import { View, FlatList } from "react-native";
 import { useEffect, useState } from "react";
-import { searchGooglePlaces } from "../services/api";
+import { searchPlaces } from "../services/api";
 import PlaceCard from "../components/PlaceCard";
 
 export default function PlacesScreen({ route, navigation }: any) {
   const { district, state } = route.params;
-  const [places, setPlaces] = useState<any[]>([]);
+  const [places, setPlaces] = useState([]);
 
   useEffect(() => {
     async function load() {
-      const data = await searchGooglePlaces(
-        `${district} ${state} tourist places`
+      const data = await searchPlaces(
+        `${district} ${state} tourist attractions`
       );
-      setPlaces(data?.results || []);
+      setPlaces(data.results || []);
     }
     load();
   }, []);
 
   return (
-    <View style={{ padding: 10 }}>
+    <View>
       <FlatList
         data={places}
-        keyExtractor={(item) => item.place_id}
-        renderItem={({ item }) => (
+        renderItem={({ item }: any) => (
           <PlaceCard
             place={item}
             onPress={() =>
