@@ -16,11 +16,18 @@ public class CorsConfig {
 
                 registry.addMapping("/**")
 
-                        // ✅ Allow your frontend URLs
+                        // ✅ Allow ALL dev environments (best for now)
+                        .allowedOriginPatterns("*")
+
+                        // OR if you want strict control, use this instead:
+                        /*
                         .allowedOrigins(
                                 "http://localhost:3000",
-                                "http://127.0.0.1:3000"
+                                "http://127.0.0.1:3000",
+                                "http://localhost:8081",
+                                "http://127.0.0.1:8081"
                         )
+                        */
 
                         // ✅ Allow all HTTP methods
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
@@ -28,8 +35,14 @@ public class CorsConfig {
                         // ✅ Allow all headers
                         .allowedHeaders("*")
 
-                        // ✅ Important for modern browsers
-                        .allowCredentials(false);
+                        // ✅ Expose headers if needed
+                        .exposedHeaders("*")
+
+                        // ✅ Important for cookies/auth (keep false for now)
+                        .allowCredentials(false)
+
+                        // ✅ Cache preflight response
+                        .maxAge(3600);
             }
         };
     }

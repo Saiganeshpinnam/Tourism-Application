@@ -1,42 +1,22 @@
-import { View, Text, Button } from "react-native";
 import { useEffect, useState } from "react";
+import { View, Text } from "react-native";
+import { getPlaceById } from "../services/api";
 
-export default function PlaceDetailsScreen({ route, navigation }: any) {
-  const { placeId } = route.params;
+export default function PlaceDetailsScreen({ route }: any) {
+  const { id } = route.params;
   const [place, setPlace] = useState<any>(null);
 
   useEffect(() => {
-    async function load() {
-      const res = await fetch(
-        `http://localhost:8080/google/details?placeId=${placeId}`
-      );
-      const data = await res.json();
-      setPlace(data.result);
-    }
-    load();
+    getPlaceById(id).then(setPlace);
   }, []);
 
   if (!place) return <Text>Loading...</Text>;
 
   return (
-    <View style={{ padding: 16 }}>
+    <View style={{ padding: 20 }}>
       <Text style={{ fontSize: 22 }}>{place.name}</Text>
-      <Text>{place.formatted_address}</Text>
-
-      <Button
-        title="Nearby Places"
-        onPress={() =>
-          navigation.navigate("Nearby", {
-            lat: place.geometry.location.lat,
-            lng: place.geometry.location.lng,
-          })
-        }
-      />
-
-      <Button
-        title="Favorites"
-        onPress={() => navigation.navigate("Favorites")}
-      />
+      <Text>{place.description}</Text>
+      <Text>{place.location}</Text>
     </View>
   );
 }

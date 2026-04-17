@@ -1,37 +1,26 @@
-import { View, FlatList } from "react-native";
 import { useEffect, useState } from "react";
-import { searchPlaces } from "../services/api";
-import PlaceCard from "../components/PlaceCard";
+import { View, FlatList, TouchableOpacity, Text } from "react-native";
+import { getPlaces } from "../services/api";
 
 export default function PlacesScreen({ route, navigation }: any) {
-  const { district, state } = route.params;
+  const { state, district } = route.params;
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
-    async function load() {
-      const data = await searchPlaces(
-        `${district} ${state} tourist attractions`
-      );
-      setPlaces(data.results || []);
-    }
-    load();
+    getPlaces(state, district).then(setPlaces);
   }, []);
 
   return (
-    <View>
-      <FlatList
-        data={places}
-        renderItem={({ item }: any) => (
-          <PlaceCard
-            place={item}
-            onPress={() =>
-              navigation.navigate("Details", {
-                placeId: item.place_id,
-              })
-            }
-          />
-        )}
-      />
-    </View>
+    <FlatList
+      data={places}
+      keyExtractor={(item: any) => item.id.toString()}
+      renderItem={({ item }) => (
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Details", { id: item.id })}
+        >
+          <Text style={{ padding: 15 }}>{item.name}</Text>
+        </TouchableOpacity>
+      )}
+    />
   );
 }

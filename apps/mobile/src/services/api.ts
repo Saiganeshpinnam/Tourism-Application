@@ -1,84 +1,21 @@
-import axios from "axios";
+const BASE_URL = "http://192.168.29.236:8080"; // your backend IP
 
-// 🔥 IMPORTANT: Use your system IP (NOT localhost)
-const BASE_URL = "http://192.168.29.236:8080";
-
-// ✅ Axios instance (clean & reusable)
-const api = axios.create({
-  baseURL: BASE_URL,
-  timeout: 10000,
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
-
-// ===============================
-// 🌍 STATES API
-// ===============================
 export const getStates = async () => {
-  try {
-    const res = await api.get("/places/states");
-    return res.data;
-  } catch (err: any) {
-    console.error("🔥 getStates API ERROR:", err?.message || err);
-    return [];
-  }
+  const res = await fetch(`${BASE_URL}/states`);
+  return res.json();
 };
 
-// ===============================
-// 🏙️ PLACES BY STATE (optional)
-// ===============================
-export const getPlacesByState = async (state: string) => {
-  try {
-    const res = await api.get(`/places/state/${state}`);
-    return res.data;
-  } catch (err: any) {
-    console.error("🔥 getPlacesByState ERROR:", err?.message || err);
-    return [];
-  }
+export const getDistricts = async (state: string) => {
+  const res = await fetch(`${BASE_URL}/districts/${state}`);
+  return res.json();
 };
 
-// ===============================
-// 🔍 SEARCH GOOGLE PLACES
-// ===============================
-export const searchPlaces = async (query: string) => {
-  try {
-    const res = await api.get(
-      `/google/search?query=${encodeURIComponent(query)}`
-    );
-    return res.data;
-  } catch (err: any) {
-    console.error("🔥 searchPlaces ERROR:", err?.message || err);
-    return { results: [] };
-  }
+export const getPlaces = async (state: string, district: string) => {
+  const res = await fetch(`${BASE_URL}/places/${state}/${district}`);
+  return res.json();
 };
 
-// ===============================
-// 📍 NEARBY PLACES
-// ===============================
-export const getNearbyPlaces = async (lat: number, lng: number) => {
-  try {
-    const res = await api.get(
-      `/google/nearby?lat=${lat}&lng=${lng}`
-    );
-    return res.data;
-  } catch (err: any) {
-    console.error("🔥 getNearbyPlaces ERROR:", err?.message || err);
-    return { results: [] };
-  }
-};
-
-// ===============================
-// 📌 PLACE DETAILS
-// ===============================
-export const getPlaceDetails = async (placeId: string) => {
-  try {
-    const res = await api.get(
-      `/google/details?placeId=${placeId}`
-    );
-    return res.data;
-  } catch (err: any) {
-    console.error("🔥 getPlaceDetails ERROR:", err?.message || err);
-    return null;
-  }
+export const getPlaceById = async (id: string) => {
+  const res = await fetch(`${BASE_URL}/place/${id}`);
+  return res.json();
 };
