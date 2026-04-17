@@ -14,14 +14,31 @@ async function safeFetch(url: string) {
   }
 }
 
-// states
+// ✅ STATES
 export async function getStates() {
   const res = await safeFetch(`${BASE_URL}/places/states`);
   if (!res) return [];
   return res.json();
 }
 
-// search
+// ✅ PLACES BY STATE
+export async function getPlacesByState(state: string) {
+  const res = await safeFetch(
+    `${BASE_URL}/places/state/${encodeURIComponent(state)}`
+  );
+
+  if (!res) return [];
+  return res.json();
+}
+
+// ✅ PLACE DETAILS
+export async function getPlaceById(id: number) {
+  const res = await safeFetch(`${BASE_URL}/places/${id}`);
+  if (!res) return null;
+  return res.json();
+}
+
+// 🔍 GOOGLE SEARCH
 export async function searchGooglePlaces(query: string) {
   const res = await safeFetch(
     `${BASE_URL}/google/search?query=${encodeURIComponent(query)}`
@@ -38,11 +55,13 @@ export async function searchGooglePlaces(query: string) {
   }
 }
 
-// get nearby places
+// 📍 NEARBY
 export async function getNearbyPlaces(lat: number, lng: number) {
-  const res = await fetch(
-    `/api/google/nearby?lat=${lat}&lng=${lng}`
+  const res = await safeFetch(
+    `${BASE_URL}/google/nearby?lat=${lat}&lng=${lng}`
   );
+
+  if (!res) return { results: [] };
 
   const text = await res.text();
 
@@ -51,4 +70,9 @@ export async function getNearbyPlaces(lat: number, lng: number) {
   } catch {
     return { results: [] };
   }
+}
+
+// 📸 PHOTO
+export function getPhotoUrl(ref: string) {
+  return `${BASE_URL}/google/photo?ref=${ref}`;
 }

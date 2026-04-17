@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/places")
-@CrossOrigin(origins = "*") // ✅ Allow frontend requests
+@CrossOrigin(origins = "*")
 public class PlaceController {
 
     private final PlaceService placeService;
@@ -19,29 +19,26 @@ public class PlaceController {
         this.placeService = placeService;
     }
 
-    // ✅ Get all places
+    // ✅ All places
     @GetMapping
     public List<Place> getAllPlaces() {
         return placeService.getAllPlaces();
     }
 
-    // ✅ Get places by state (FIXED for spaces & encoding)
+    // ✅ Places by state
     @GetMapping("/state/{state}")
     public List<Place> getPlacesByState(@PathVariable String state) {
-
-        // Decode URL (handles "Uttar%20Pradesh")
         String decodedState = URLDecoder.decode(state, StandardCharsets.UTF_8);
-
         return placeService.getPlacesByState(decodedState);
     }
 
-    // ✅ Get place by ID
+    // ✅ Place by ID
     @GetMapping("/{id}")
     public Place getPlaceById(@PathVariable int id) {
         return placeService.getPlaceById(id);
     }
 
-    // 🔥 NEW API — Get all unique states
+    // ✅ All unique states
     @GetMapping("/states")
     public List<String> getAllStates() {
         return placeService.getAllPlaces().stream()
@@ -51,4 +48,48 @@ public class PlaceController {
                 .sorted()
                 .toList();
     }
+
+    // ✅ Districts by state
+    @GetMapping("/districts/{state}")
+    public List<String> getDistrictsByState(@PathVariable String state) {
+
+        String decodedState = URLDecoder.decode(state, StandardCharsets.UTF_8);
+
+        return placeService.getAllPlaces().stream()
+                .filter(place -> decodedState.equals(place.getState()))
+                .map(Place::getName)
+                .filter(d -> d != null && !d.isEmpty())
+                .distinct()
+                .sorted()
+                .toList();
+    }
+
+    // ✅ Places by state + district
+   @GetMapping("/filter")
+public List<Place> getPlacesByStateAndDistrict(
+        @RequestParam String state,
+        @RequestParam String district
+) {
+    String decodedState = URLDecoder.decode(state, StandardCharsets.UTF_8);
+    String decodedDistrict = URLDecoder.decode(district, StandardCharsets.UTF_8);
+
+    return placeService.getAllPlaces().stream()
+            .filter(place -> 
+                decodedState.equalsIgnoreCase(place.getState()) &&
+                (
+                    // ✅ Case 1: district exists
+                    (place.getDistrict() != null &&
+                     place.getDistrict().toLowerCase()
+                         .contains(decodedDistrict.toLowerCase()))
+                    
+                    ||
+
+                    // ✅ Case 2: district missing → fallback to name
+                    (place.getDistrict() == null &&
+                     place.getName().toLowerCase()
+                         .contains(decodedDistrict.toLowerCase()))
+                )
+            )
+            .toList();
+}
 }

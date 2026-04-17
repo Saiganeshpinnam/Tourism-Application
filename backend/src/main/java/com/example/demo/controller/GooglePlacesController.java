@@ -23,51 +23,48 @@ public class GooglePlacesController {
         this.restTemplate = restTemplate;
     }
 
+    // ✅ Nearby Places
     @GetMapping("/nearby")
-public ResponseEntity<?> getNearbyPlaces(
-        @RequestParam double lat,
-        @RequestParam double lng
-) {
-    try {
-        String result = googleService.getNearbyPlaces(lat, lng);
-        return ResponseEntity.ok(result);
-    } catch (Exception e) {
-        return ResponseEntity
-                .internalServerError()
-                .body("{\"results\": []}");
+    public ResponseEntity<?> getNearbyPlaces(
+            @RequestParam double lat,
+            @RequestParam double lng
+    ) {
+        try {
+            String result = googleService.getNearbyPlaces(lat, lng);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError()
+                    .body("{\"results\": []}");
+        }
     }
-}
 
-    // 🔥 1️⃣ SEARCH PLACES
+    // ✅ Search
     @GetMapping("/search")
     public ResponseEntity<?> searchPlaces(@RequestParam String query) {
         try {
             String result = googleService.getPlacesByQuery(query);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
-            return ResponseEntity
-                    .internalServerError()
+            return ResponseEntity.internalServerError()
                     .body("{\"results\": []}");
         }
     }
 
-    // 🔥 2️⃣ PLACE DETAILS (NEW)
+    // ✅ Details
     @GetMapping("/details")
     public ResponseEntity<?> getPlaceDetails(@RequestParam String placeId) {
         try {
             String result = googleService.getPlaceDetails(placeId);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
-            return ResponseEntity
-                    .internalServerError()
+            return ResponseEntity.internalServerError()
                     .body("{\"result\": {}}");
         }
     }
 
-    // 🔥 3️⃣ PHOTO PROXY (SECURE)
+    // ✅ Photo proxy
     @GetMapping("/photo")
     public ResponseEntity<byte[]> getPhoto(@RequestParam String ref) {
-
         try {
             String url = "https://maps.googleapis.com/maps/api/place/photo"
                     + "?maxwidth=800"
