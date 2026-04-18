@@ -9,7 +9,10 @@ import {
   Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
+
 import { getStates } from "../services/api";
+import { COLORS, SPACING, RADIUS } from "../styles/theme";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -29,36 +32,54 @@ const HomeScreen = () => {
       onPress={() =>
         navigation.navigate("Districts" as never, { state: item } as never)
       }
+      activeOpacity={0.8}
     >
-      {/* Optional image placeholder */}
+      {/* IMAGE */}
       <Image
         source={{
-          uri: "https://via.placeholder.com/150",
+          uri: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
         }}
         style={styles.image}
       />
-      <Text style={styles.text}>{item}</Text>
+
+      {/* OVERLAY */}
+      <View style={styles.overlay} />
+
+      {/* CONTENT */}
+      <View style={styles.content}>
+        <Ionicons name="location" size={18} color="#fff" />
+        <Text style={styles.text}>{item}</Text>
+      </View>
     </TouchableOpacity>
   );
 
   if (loading) {
     return (
       <View style={styles.center}>
-        <ActivityIndicator size="large" />
-        <Text>Loading states...</Text>
+        <ActivityIndicator size="large" color={COLORS.primary} />
+        <Text style={{ marginTop: 10 }}>Loading states...</Text>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>🌍 Explore India</Text>
+      {/* HEADER */}
+      <View style={styles.header}>
+        <Text style={styles.title}>Explore India 🇮🇳</Text>
+        <Text style={styles.subtitle}>
+          Discover states & tourist destinations
+        </Text>
+      </View>
 
+      {/* GRID */}
       <FlatList
         data={states}
         keyExtractor={(item) => item}
         renderItem={renderItem}
         numColumns={2}
+        columnWrapperStyle={{ justifyContent: "space-between" }}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
@@ -69,32 +90,61 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 12,
-    backgroundColor: "#f2f2f2",
+    padding: SPACING.md,
+    backgroundColor: COLORS.background,
   },
-  heading: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 12,
+
+  header: {
+    marginBottom: SPACING.lg,
   },
+
+  title: {
+    fontSize: 26,
+    fontWeight: "800",
+    color: COLORS.text,
+  },
+
+  subtitle: {
+    color: COLORS.subText,
+    marginTop: 4,
+    fontSize: 14,
+  },
+
   card: {
-    flex: 1,
-    margin: 8,
-    borderRadius: 12,
-    backgroundColor: "#fff",
+    width: "48%",
+    height: 140,
+    borderRadius: RADIUS.lg,
     overflow: "hidden",
-    elevation: 3,
+    marginBottom: SPACING.md,
+    elevation: 4,
   },
+
   image: {
     width: "100%",
-    height: 100,
+    height: "100%",
+    position: "absolute",
   },
+
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(0,0,0,0.35)",
+  },
+
+  content: {
+    flex: 1,
+    justifyContent: "flex-end",
+    padding: SPACING.md,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
   text: {
-    padding: 10,
+    color: "#fff",
     fontSize: 16,
-    fontWeight: "600",
-    textAlign: "center",
+    fontWeight: "700",
+    marginLeft: 6,
   },
+
   center: {
     flex: 1,
     justifyContent: "center",
