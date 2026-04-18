@@ -6,13 +6,14 @@ import {
   Text,
   TextInput,
   Image,
-  ActivityIndicator,
   StyleSheet,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import ShimmerCard from "../components/ShimmerCard";
 
 import { searchGooglePlaces, getPhotoUrl } from "../services/api";
 import { COLORS, SPACING, RADIUS } from "../styles/theme";
+import { useFavorites } from "../context/FavoritesContext";
 
 export default function PlacesScreen({ route, navigation }: any) {
   const { state, district } = route.params;
@@ -20,6 +21,8 @@ export default function PlacesScreen({ route, navigation }: any) {
   const [places, setPlaces] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   useEffect(() => {
     async function load() {
@@ -49,18 +52,24 @@ export default function PlacesScreen({ route, navigation }: any) {
     p.name.toLowerCase().includes(search.toLowerCase())
   );
 
+  if (loading) {
+    return (
+      <FlatList
+        data={[1, 2, 3, 4, 5, 6]}
+        keyExtractor={(item) => item.toString()}
+        numColumns={2}
+        columnWrapperStyle={{ justifyContent: "space-between" }}
+        renderItem={() => <ShimmerCard />}
+      />
+    );
+  }
+
   return (
     <View style={styles.container}>
-      
       {/* HEADER */}
-      <View style={styles.header}>
-        <Text style={styles.title}>{district}</Text>
-        <Text style={styles.subtitle}>
-          Explore top tourist places in {state}
-        </Text>
-      </View>
+      <Text style={styles.title}>{district}</Text>
 
-      {/* SEARCH BAR */}
+      {/* SEARCH */}
       <View style={styles.searchBox}>
         <Ionicons name="search" size={18} color={COLORS.subText} />
         <TextInput
@@ -71,22 +80,12 @@ export default function PlacesScreen({ route, navigation }: any) {
         />
       </View>
 
-      {/* LOADING */}
-      {loading && (
-        <ActivityIndicator
-          size="large"
-          color={COLORS.primary}
-          style={{ marginTop: 20 }}
-        />
-      )}
-
       {/* GRID */}
       <FlatList
         data={filtered}
         keyExtractor={(item) => item.place_id}
         numColumns={2}
         columnWrapperStyle={{ justifyContent: "space-between" }}
-        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => {
           const photoRef = item.photos?.[0]?.photo_reference;
 
@@ -94,10 +93,11 @@ export default function PlacesScreen({ route, navigation }: any) {
             ? getPhotoUrl(photoRef)
             : "https://picsum.photos/300";
 
+          const fav = isFavorite(item.place_id);
+
           return (
             <TouchableOpacity
               style={styles.cardWrapper}
-              activeOpacity={0.85}
               onPress={() =>
                 navigation.navigate("PlaceDetails", {
                   placeId: item.place_id,
@@ -105,13 +105,21 @@ export default function PlacesScreen({ route, navigation }: any) {
               }
             >
               <View style={styles.card}>
-                
-                {/* IMAGE */}
                 <Image source={{ uri: imageUrl }} style={styles.image} />
 
-                {/* CONTENT */}
+                {/* ❤️ FAVORITE */}
+                <TouchableOpacity
+                  style={styles.heart}
+                  onPress={() => toggleFavorite(item)}
+                >
+                  <Ionicons
+                    name={fav ? "heart" : "heart-outline"}
+                    size={18}
+                    color="red"
+                  />
+                </TouchableOpacity>
+
                 <View style={styles.content}>
-                  
                   <Text numberOfLines={1} style={styles.name}>
                     {item.name}
                   </Text>
@@ -119,24 +127,11 @@ export default function PlacesScreen({ route, navigation }: any) {
                   <Text numberOfLines={1} style={styles.location}>
                     {item.vicinity}
                   </Text>
-
-                  {/* RATING */}
-                  <View style={styles.ratingRow}>
-                    <Ionicons name="star" size={14} color="#F59E0B" />
-                    <Text style={styles.rating}>
-                      {item.rating || "N/A"}
-                    </Text>
-                  </View>
                 </View>
               </View>
             </TouchableOpacity>
           );
         }}
-        ListEmptyComponent={
-          !loading && (
-            <Text style={styles.empty}>No places found</Text>
-          )
-        }
       />
     </View>
   );
@@ -149,20 +144,10 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
   },
 
-  header: {
-    marginBottom: SPACING.md,
-  },
-
   title: {
-    fontSize: 26,
+    fontSize: 24,
     fontWeight: "800",
-    color: COLORS.text,
-  },
-
-  subtitle: {
-    color: COLORS.subText,
-    marginTop: 4,
-    fontSize: 14,
+    marginBottom: SPACING.md,
   },
 
   searchBox: {
@@ -172,7 +157,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.md,
     borderRadius: RADIUS.md,
     marginBottom: SPACING.md,
-    elevation: 2,
   },
 
   searchInput: {
@@ -190,12 +174,20 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.lg,
     marginBottom: SPACING.md,
     overflow: "hidden",
-    elevation: 4,
   },
 
   image: {
     width: "100%",
-    height: 130,
+    height: 120,
+  },
+
+  heart: {
+    position: "absolute",
+    top: 8,
+    right: 8,
+    backgroundColor: "#fff",
+    padding: 6,
+    borderRadius: 20,
   },
 
   content: {
@@ -203,31 +195,11 @@ const styles = StyleSheet.create({
   },
 
   name: {
-    fontSize: 14,
     fontWeight: "700",
-    color: COLORS.text,
   },
 
   location: {
     fontSize: 12,
-    color: COLORS.subText,
-    marginTop: 2,
-  },
-
-  ratingRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 4,
-  },
-
-  rating: {
-    marginLeft: 4,
-    fontSize: 12,
-  },
-
-  empty: {
-    textAlign: "center",
-    marginTop: 20,
     color: COLORS.subText,
   },
 });

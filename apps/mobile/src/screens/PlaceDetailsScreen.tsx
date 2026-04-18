@@ -13,10 +13,13 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { getPlaceDetails, getPhotoUrl } from "../services/api";
 import { COLORS, SPACING, RADIUS } from "../styles/theme";
+import { useFavorites } from "../context/FavoritesContext";
 
 export default function PlaceDetailsScreen({ route, navigation }: any) {
   const { placeId } = route.params;
   const [place, setPlace] = useState<any>(null);
+
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   useEffect(() => {
     getPlaceDetails(placeId).then((data) => {
@@ -31,6 +34,8 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
       </View>
     );
   }
+
+  const fav = isFavorite(place.place_id);
 
   const photoRef = place.photos?.[0]?.photo_reference;
 
@@ -48,15 +53,13 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
       <StatusBar barStyle="light-content" />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        
-        {/* HERO IMAGE */}
+        {/* HERO */}
         <View style={styles.hero}>
           <Image source={{ uri: imageUrl }} style={styles.image} />
 
-          {/* DARK GRADIENT */}
           <View style={styles.overlay} />
 
-          {/* TOP BUTTONS */}
+          {/* TOP BAR */}
           <View style={styles.topBar}>
             <TouchableOpacity
               style={styles.iconBtn}
@@ -65,8 +68,16 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
               <Ionicons name="arrow-back" size={20} color="#000" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.iconBtn}>
-              <Ionicons name="heart-outline" size={20} color="#000" />
+            {/* ❤️ FAVORITE */}
+            <TouchableOpacity
+              style={styles.iconBtn}
+              onPress={() => toggleFavorite(place)}
+            >
+              <Ionicons
+                name={fav ? "heart" : "heart-outline"}
+                size={20}
+                color="red"
+              />
             </TouchableOpacity>
           </View>
 
@@ -85,8 +96,6 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
 
         {/* DETAILS */}
         <View style={styles.content}>
-          
-          {/* LOCATION */}
           <View style={styles.card}>
             <Ionicons name="location-outline" size={20} color={COLORS.primary} />
             <Text style={styles.cardText}>
@@ -94,7 +103,6 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
             </Text>
           </View>
 
-          {/* TYPES */}
           <View style={styles.card}>
             <Ionicons name="pricetag-outline" size={20} color={COLORS.primary} />
             <Text style={styles.cardText}>
@@ -102,16 +110,16 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
             </Text>
           </View>
 
-          {/* ABOUT */}
           <Text style={styles.sectionTitle}>About</Text>
+
           <Text style={styles.description}>
-  {place?.editorial_summary?.overview ||
-    "No description available for this place."}
-</Text>
+            {place?.editorial_summary?.overview ||
+              `${place.name} is a popular tourist destination.`}
+          </Text>
         </View>
       </ScrollView>
 
-      {/* STICKY BUTTON */}
+      {/* NAVIGATE BUTTON */}
       <View style={styles.bottomBar}>
         <TouchableOpacity
           style={styles.navigateBtn}
@@ -131,21 +139,12 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
 }
 
 const styles = StyleSheet.create({
-  hero: {
-    height: 300,
-  },
-
-  image: {
-    width: "100%",
-    height: "100%",
-    position: "absolute",
-  },
-
+  hero: { height: 300 },
+  image: { width: "100%", height: "100%", position: "absolute" },
   overlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(0,0,0,0.4)",
   },
-
   topBar: {
     position: "absolute",
     top: 40,
@@ -154,42 +153,32 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-
   iconBtn: {
     backgroundColor: "#fff",
     padding: 8,
     borderRadius: 20,
     elevation: 3,
   },
-
   heroText: {
     position: "absolute",
     bottom: 20,
     left: 15,
   },
-
   title: {
     color: "#fff",
     fontSize: 26,
     fontWeight: "800",
   },
-
   ratingBox: {
     flexDirection: "row",
     alignItems: "center",
     marginTop: 5,
   },
-
-  ratingText: {
-    color: "#fff",
-    marginLeft: 4,
-  },
-
+  ratingText: { color: "#fff", marginLeft: 4 },
   content: {
     padding: SPACING.lg,
     backgroundColor: COLORS.background,
   },
-
   card: {
     flexDirection: "row",
     alignItems: "center",
@@ -199,32 +188,27 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
     elevation: 2,
   },
-
   cardText: {
     marginLeft: 10,
     flex: 1,
     color: COLORS.text,
   },
-
   sectionTitle: {
     fontSize: 18,
     fontWeight: "700",
     marginTop: SPACING.md,
   },
-
   description: {
     marginTop: 5,
     color: COLORS.subText,
     lineHeight: 20,
   },
-
   bottomBar: {
     padding: SPACING.md,
     backgroundColor: "#fff",
     borderTopWidth: 1,
     borderColor: "#eee",
   },
-
   navigateBtn: {
     backgroundColor: COLORS.primary,
     padding: 14,
@@ -233,17 +217,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-
   navigateText: {
     color: "#fff",
     marginLeft: 8,
     fontSize: 16,
     fontWeight: "600",
   },
-
-  center: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  center: { flex: 1, justifyContent: "center", alignItems: "center" },
 });
