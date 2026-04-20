@@ -9,8 +9,10 @@ export default function HeroVideo() {
   const toggleSound = () => {
     if (!videoRef.current) return;
 
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
+    const newMuted = !isMuted;
+
+    videoRef.current.muted = newMuted; // 🔥 update DOM
+    setIsMuted(newMuted);              // 🔥 update state
   };
 
   const videoUrl =
@@ -18,19 +20,17 @@ export default function HeroVideo() {
 
   return (
     <div className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden mb-8">
-        
       
       {/* VIDEO */}
       <video
+        ref={videoRef}
         src={videoUrl}
         autoPlay
-        muted
+        muted={isMuted} // ✅ FIX
         loop
         playsInline
         className="w-full h-full object-cover"
       />
-
-      
 
       {/* 🔊 SOUND BUTTON */}
       <button

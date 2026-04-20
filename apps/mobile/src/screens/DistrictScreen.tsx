@@ -5,22 +5,29 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
+  TextInput,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-import { getPlacesByState } from "../services/api";
 import { COLORS, SPACING, RADIUS } from "../styles/theme";
+import { stateDistricts } from "../data/stateDistricts";
 
 export default function DistrictScreen({ route, navigation }: any) {
   const { state } = route.params;
-  const [districts, setDistricts] = useState<string[]>([]);
 
+  const [districts, setDistricts] = useState<string[]>([]);
+  const [search, setSearch] = useState("");
+
+  // ✅ LOAD DISTRICTS FROM STATIC DATA
   useEffect(() => {
-    getPlacesByState(state).then((data) => {
-      const unique = [...new Set(data.map((p: any) => p.name))];
-      setDistricts(unique.slice(0, 10));
-    });
+    const data = stateDistricts[state] || [];
+    setDistricts(data);
   }, [state]);
+
+  // 🔍 FILTER
+  const filtered = districts.filter((d) =>
+    d.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <View style={styles.container}>
@@ -33,9 +40,17 @@ export default function DistrictScreen({ route, navigation }: any) {
         </Text>
       </View>
 
+      {/* 🔍 SEARCH */}
+      <TextInput
+        placeholder="Search district..."
+        value={search}
+        onChangeText={setSearch}
+        style={styles.search}
+      />
+
       {/* LIST */}
       <FlatList
-        data={districts}
+        data={filtered}
         keyExtractor={(item) => item}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
@@ -72,6 +87,11 @@ export default function DistrictScreen({ route, navigation }: any) {
             </View>
           </TouchableOpacity>
         )}
+        ListEmptyComponent={
+          <Text style={styles.empty}>
+            No districts found
+          </Text>
+        }
       />
     </View>
   );
@@ -100,6 +120,15 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 
+  search: {
+    backgroundColor: "#fff",
+    padding: 12,
+    borderRadius: RADIUS.md,
+    marginBottom: SPACING.md,
+    borderWidth: 1,
+    borderColor: "#eee",
+  },
+
   card: {
     backgroundColor: COLORS.card,
     padding: SPACING.lg,
@@ -120,5 +149,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: COLORS.subText,
     marginTop: 2,
+  },
+
+  empty: {
+    textAlign: "center",
+    marginTop: 20,
+    color: COLORS.subText,
   },
 });

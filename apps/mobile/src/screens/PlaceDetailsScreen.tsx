@@ -9,6 +9,7 @@ import {
   Linking,
   StatusBar,
   FlatList,
+  Alert,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -18,10 +19,38 @@ import { useFavorites } from "../context/FavoritesContext";
 
 // 🏨 DUMMY HOTELS
 const dummyHotels = [
-  { id: "1", name: "Grand Palace Hotel", image: "https://res.cloudinary.com/do3uk8wnj/image/upload/v1776665716/177666553255048815_z7calr.jpg", rating: 4.5, price: "₹2500/night", phone: "919876543210" },
-  { id: "2", name: "City View Residency", image: "https://res.cloudinary.com/do3uk8wnj/image/upload/v1776665905/17766658360112816d_spc880.jpg", rating: 4.2, price: "₹1800/night", phone: "919876543211" },
-  { id: "3", name: "Royal Stay Inn", image: "https://res.cloudinary.com/do3uk8wnj/image/upload/v1776666073/17766660201311293c_cujae9.jpg", rating: 4.6, price: "₹3200/night", phone: "919876543212" },
-  { id: "4", name: "Budget Comfort Hotel", image: "https://res.cloudinary.com/do3uk8wnj/image/upload/v1776666187/1776666166610318db_csdcat.jpg", rating: 4.0, price: "₹1200/night", phone: "919876543213" },
+  {
+    id: "1",
+    name: "Grand Palace Hotel",
+    image: "https://picsum.photos/300?1",
+    rating: 4.5,
+    price: "₹2500/night",
+    phone: "919876543210",
+  },
+  {
+    id: "2",
+    name: "City View Residency",
+    image: "https://picsum.photos/300?2",
+    rating: 4.2,
+    price: "₹1800/night",
+    phone: "919876543211",
+  },
+  {
+    id: "3",
+    name: "Royal Stay Inn",
+    image: "https://picsum.photos/300?3",
+    rating: 4.6,
+    price: "₹3200/night",
+    phone: "919876543212",
+  },
+  {
+    id: "4",
+    name: "Budget Comfort Hotel",
+    image: "https://picsum.photos/300?4",
+    rating: 4.0,
+    price: "₹1200/night",
+    phone: "919876543213",
+  },
 ];
 
 export default function PlaceDetailsScreen({ route, navigation }: any) {
@@ -47,26 +76,37 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
   const fav = isFavorite(place.place_id);
 
   const photoRef = place.photos?.[0]?.photo_reference;
-
   const imageUrl = photoRef
     ? getPhotoUrl(photoRef)
     : "https://picsum.photos/500";
 
-  // 📍 NAVIGATION
-  function openGoogleMaps(lat: number, lng: number) {
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
-    Linking.openURL(url);
+  const lat = place.geometry?.location?.lat;
+  const lng = place.geometry?.location?.lng;
+
+  // 🚀 BEST NAVIGATION METHOD
+  function openGoogleMaps() {
+    if (!lat || !lng) {
+      Alert.alert("Error", "Location not available");
+      return;
+    }
+
+    // 🔥 REAL GPS NAVIGATION
+    const url = `google.navigation:q=${lat},${lng}`;
+
+    Linking.openURL(url).catch(() => {
+      // fallback (browser)
+      const webUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+      Linking.openURL(webUrl);
+    });
   }
 
-  // 📞 CALL
   function callHotel(phone: string) {
     Linking.openURL(`tel:${phone}`);
   }
 
-  // 💬 WHATSAPP
   function openWhatsApp(phone: string, name: string) {
-    const message = `Hi, I found ${name} on Tourism App. I want to book a room.`;
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    const msg = `Hi, I found ${name} on Tourism App. I want to book a room.`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
     Linking.openURL(url);
   }
 
@@ -75,24 +115,36 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
       <StatusBar barStyle="light-content" />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        
         {/* HERO */}
         <View style={styles.hero}>
           <Image source={{ uri: imageUrl }} style={styles.image} />
           <View style={styles.overlay} />
 
           <View style={styles.topBar}>
-            <TouchableOpacity style={styles.iconBtn} onPress={() => navigation.goBack()}>
+            <TouchableOpacity
+              style={styles.iconBtn}
+              onPress={() => navigation.goBack()}
+            >
               <Ionicons name="arrow-back" size={20} color="#000" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.iconBtn} onPress={() => toggleFavorite(place)}>
-              <Ionicons name={fav ? "heart" : "heart-outline"} size={20} color="red" />
+            <TouchableOpacity
+              style={styles.iconBtn}
+              onPress={() => toggleFavorite(place)}
+            >
+              <Ionicons
+                name={fav ? "heart" : "heart-outline"}
+                size={20}
+                color="red"
+              />
             </TouchableOpacity>
           </View>
 
           <View style={styles.heroText}>
             <Text style={styles.title}>{place.name}</Text>
+            <Text style={styles.rating}>
+              ⭐ {place.rating || "N/A"}
+            </Text>
           </View>
         </View>
 
@@ -115,16 +167,12 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
             renderItem={({ item }) => (
               <View style={styles.hotelCard}>
                 <Image source={{ uri: item.image }} style={styles.hotelImage} />
-
                 <View style={styles.hotelContent}>
                   <Text style={styles.hotelName}>{item.name}</Text>
-                  <Text style={styles.hotelRating}>⭐ {item.rating}</Text>
+                  <Text>⭐ {item.rating}</Text>
                   <Text style={styles.hotelPrice}>{item.price}</Text>
 
-                  {/* 🔥 BUTTON ROW */}
                   <View style={styles.btnRow}>
-                    
-                    {/* WHATSAPP */}
                     <TouchableOpacity
                       style={styles.whatsappBtn}
                       onPress={() => openWhatsApp(item.phone, item.name)}
@@ -132,14 +180,12 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
                       <Ionicons name="logo-whatsapp" size={16} color="#fff" />
                     </TouchableOpacity>
 
-                    {/* CALL */}
                     <TouchableOpacity
                       style={styles.callBtn}
                       onPress={() => callHotel(item.phone)}
                     >
                       <Ionicons name="call" size={16} color="#fff" />
                     </TouchableOpacity>
-
                   </View>
                 </View>
               </View>
@@ -148,19 +194,11 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
         </View>
       </ScrollView>
 
-      {/* NAVIGATE */}
+      {/* NAVIGATE BUTTON */}
       <View style={styles.bottomBar}>
-        <TouchableOpacity
-          style={styles.navigateBtn}
-          onPress={() =>
-            openGoogleMaps(
-              place.geometry?.location?.lat,
-              place.geometry?.location?.lng
-            )
-          }
-        >
+        <TouchableOpacity style={styles.navigateBtn} onPress={openGoogleMaps}>
           <Ionicons name="navigate" size={18} color="#fff" />
-          <Text style={styles.navigateText}>Navigate</Text>
+          <Text style={styles.navigateText}>Start Navigation</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -169,8 +207,17 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
 
 const styles = StyleSheet.create({
   hero: { height: 300 },
-  image: { width: "100%", height: "100%", position: "absolute" },
-  overlay: { ...StyleSheet.absoluteFillObject, backgroundColor: "rgba(0,0,0,0.4)" },
+
+  image: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+  },
+
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(0,0,0,0.4)",
+  },
 
   topBar: {
     position: "absolute",
@@ -181,17 +228,44 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
 
-  iconBtn: { backgroundColor: "#fff", padding: 8, borderRadius: 20 },
+  iconBtn: {
+    backgroundColor: "#fff",
+    padding: 8,
+    borderRadius: 20,
+  },
 
-  heroText: { position: "absolute", bottom: 20, left: 15 },
+  heroText: {
+    position: "absolute",
+    bottom: 20,
+    left: 15,
+  },
 
-  title: { color: "#fff", fontSize: 26, fontWeight: "800" },
+  title: {
+    color: "#fff",
+    fontSize: 26,
+    fontWeight: "800",
+  },
 
-  content: { padding: SPACING.lg },
+  rating: {
+    color: "#fff",
+    marginTop: 4,
+  },
 
-  sectionTitle: { fontSize: 18, fontWeight: "700", marginTop: SPACING.md },
+  content: {
+    padding: SPACING.lg,
+    backgroundColor: COLORS.background,
+  },
 
-  description: { marginTop: 5 },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+    marginTop: SPACING.md,
+  },
+
+  description: {
+    marginTop: 5,
+    color: COLORS.subText,
+  },
 
   hotelCard: {
     width: 200,
@@ -199,17 +273,27 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 12,
     overflow: "hidden",
+    elevation: 3,
   },
 
-  hotelImage: { width: "100%", height: 120 },
+  hotelImage: {
+    width: "100%",
+    height: 120,
+  },
 
-  hotelContent: { padding: 10 },
+  hotelContent: {
+    padding: 10,
+  },
 
-  hotelName: { fontWeight: "bold" },
+  hotelName: {
+    fontWeight: "bold",
+  },
 
-  hotelRating: { fontSize: 12 },
-
-  hotelPrice: { color: "#007AFF", fontWeight: "600" },
+  hotelPrice: {
+    color: "#007AFF",
+    fontWeight: "600",
+    marginTop: 4,
+  },
 
   btnRow: {
     flexDirection: "row",
@@ -233,17 +317,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  bottomBar: { padding: 10 },
+  bottomBar: {
+    padding: SPACING.md,
+    backgroundColor: "#fff",
+  },
 
   navigateBtn: {
-    backgroundColor: "#000",
+    backgroundColor: COLORS.primary,
     padding: 14,
-    borderRadius: 10,
+    borderRadius: RADIUS.lg,
     flexDirection: "row",
     justifyContent: "center",
   },
 
-  navigateText: { color: "#fff", marginLeft: 8 },
+  navigateText: {
+    color: "#fff",
+    marginLeft: 8,
+    fontWeight: "600",
+  },
 
-  center: { flex: 1, justifyContent: "center", alignItems: "center" },
+  center: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
