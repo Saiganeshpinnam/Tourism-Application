@@ -78,3 +78,22 @@ export async function getPlaceDetails(placeId: string) {
 export function getPhotoUrl(ref: string) {
   return `${BASE_URL}/google/photo?ref=${ref}`;
 }
+
+// =========================
+// 📍 NEARBY PLACES (FIX)
+// =========================
+export async function getNearbyPlaces(lat: number, lng: number) {
+  const res = await safeFetch(
+    `${BASE_URL}/google/nearby?lat=${lat}&lng=${lng}`
+  );
+
+  if (!res) return { results: [] };
+
+  const text = await res.text();
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    return { results: [] };
+  }
+}

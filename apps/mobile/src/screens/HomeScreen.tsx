@@ -12,6 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
 import { getStates } from "../services/api";
+import HeroVideo from "../components/HeroVideo";
 import { COLORS, SPACING, RADIUS } from "../styles/theme";
 
 const HomeScreen = () => {
@@ -32,9 +33,8 @@ const HomeScreen = () => {
       onPress={() =>
         navigation.navigate("Districts" as never, { state: item } as never)
       }
-      activeOpacity={0.8}
+      activeOpacity={0.85}
     >
-      {/* IMAGE */}
       <Image
         source={{
           uri: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
@@ -42,10 +42,8 @@ const HomeScreen = () => {
         style={styles.image}
       />
 
-      {/* OVERLAY */}
       <View style={styles.overlay} />
 
-      {/* CONTENT */}
       <View style={styles.content}>
         <Ionicons name="location" size={18} color="#fff" />
         <Text style={styles.text}>{item}</Text>
@@ -63,39 +61,38 @@ const HomeScreen = () => {
   }
 
   return (
-    <View style={styles.container}>
-      {/* HEADER */}
-      <View style={styles.header}>
-        <Text style={styles.title}>Explore India 🇮🇳</Text>
-        <Text style={styles.subtitle}>
-          Discover states & tourist destinations
-        </Text>
-      </View>
+    <FlatList
+      data={states}
+      keyExtractor={(item) => item}
+      renderItem={renderItem}
+      numColumns={2}
+      columnWrapperStyle={{ justifyContent: "space-between" }}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ padding: SPACING.md }}
 
-      {/* GRID */}
-      <FlatList
-        data={states}
-        keyExtractor={(item) => item}
-        renderItem={renderItem}
-        numColumns={2}
-        columnWrapperStyle={{ justifyContent: "space-between" }}
-        showsVerticalScrollIndicator={false}
-      />
-    </View>
+      // 🎥 HERO + HEADER
+      ListHeaderComponent={
+        <>
+          <HeroVideo />
+
+          <View style={styles.header}>
+            <Text style={styles.title}>Explore India 🇮🇳</Text>
+            <Text style={styles.subtitle}>
+              Discover states & tourist destinations
+            </Text>
+          </View>
+        </>
+      }
+    />
   );
 };
 
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: SPACING.md,
-    backgroundColor: COLORS.background,
-  },
-
   header: {
     marginBottom: SPACING.lg,
+    marginTop: SPACING.sm,
   },
 
   title: {
