@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   View,
   FlatList,
   Text,
   Image,
-  ActivityIndicator,
   StyleSheet,
   TouchableOpacity,
+  Animated,
 } from "react-native";
 import * as Location from "expo-location";
 import { Ionicons } from "@expo/vector-icons";
@@ -24,27 +24,35 @@ export default function NearbyScreen({ navigation }: any) {
   useEffect(() => {
     async function loadNearby() {
       try {
-        // ✅ Ask permission
         let { status } =
           await Location.requestForegroundPermissionsAsync();
 
         if (status !== "granted") {
           alert("Location permission denied");
+
+          // 🔥 fallback (Hyderabad)
+          const data = await getNearbyPlaces(17.385044, 78.486671);
+          setPlaces(data?.results || []);
           return;
         }
 
-        // ✅ Get current location
         let location = await Location.getCurrentPositionAsync({});
 
         const lat = location.coords.latitude;
         const lng = location.coords.longitude;
 
-        // ✅ Call backend API
-        const data = await getNearbyPlaces(lat, lng);
+        console.log("LAT:", lat, "LNG:", lng);
 
-        setPlaces(data.results || []);
+        const data = await getNearbyPlaces(lat, lng);
+        console.log("API:", data);
+
+        setPlaces(data?.results || []);
       } catch (err) {
         console.error(err);
+
+        // 🔥 fallback if error
+        const data = await getNearbyPlaces(17.385044, 78.486671);
+        setPlaces(data?.results || []);
       } finally {
         setLoading(false);
       }
@@ -53,88 +61,132 @@ export default function NearbyScreen({ navigation }: any) {
     loadNearby();
   }, []);
 
-  if (loading) {
+  // =========================
+  // 🔥 SHIMMER COMPONENT
+  // =========================
+  const ShimmerCard = () => {
+    const shimmer = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => {
+      Animated.loop(
+        Animated.timing(shimmer, {
+          toValue: 1,
+          duration: 1000,
+          useNativeDriver: true,
+        })
+      ).start();
+    }, []);
+
+    const translateX = shimmer.interpolate({
+      inputRange: [0, 1],
+      outputRange: [-150, 150],
+    });
+
     return (
-      <View style={styles.center}>
-        <ActivityIndicator size="large" />
-        <Text>Finding nearby places...</Text>
+      <View style={styles.cardWrapper}>
+        <View style={styles.card}>
+          <View style={styles.image}>
+            <Animated.View
+              style={[
+                styles.shimmerOverlay,
+                { transform: [{ translateX }] },
+              ]}
+            />
+          </View>
+
+          <View style={styles.content}>
+            <View style={styles.shimmerLine} />
+            <View style={styles.shimmerLineSmall} />
+          </View>
+        </View>
       </View>
     );
-  }
+  };
+
+  // =========================
+  // ✅ REAL CARD
+  // =========================
+  const renderItem = ({ item }: any) => {
+    const photoRef = item.photos?.[0]?.photo_reference;
+
+    const imageUrl = photoRef
+      ? getPhotoUrl(photoRef)
+      : "https://picsum.photos/300";
+
+    const fav = isFavorite(item.place_id);
+
+    return (
+      <TouchableOpacity
+        style={styles.cardWrapper}
+        onPress={() =>
+          navigation.navigate("Explore", {
+            screen: "PlaceDetails",
+            params: { placeId: item.place_id },
+          })
+        }
+      >
+        <View style={styles.card}>
+          <Image source={{ uri: imageUrl }} style={styles.image} />
+
+          {/* ❤️ FAVORITE */}
+          <TouchableOpacity
+            style={styles.heart}
+            onPress={() => toggleFavorite(item)}
+          >
+            <Ionicons
+              name={fav ? "heart" : "heart-outline"}
+              size={18}
+              color="red"
+            />
+          </TouchableOpacity>
+
+          <View style={styles.content}>
+            <Text numberOfLines={1} style={styles.name}>
+              {item.name}
+            </Text>
+
+            <Text numberOfLines={1} style={styles.location}>
+              {item.vicinity}
+            </Text>
+
+            <View style={styles.row}>
+              <Ionicons name="star" size={14} color="#F59E0B" />
+              <Text style={styles.rating}>
+                {item.rating || "N/A"}
+              </Text>
+            </View>
+          </View>
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>📍 Nearby Places</Text>
 
       <FlatList
-        data={places}
-        keyExtractor={(item) => item.place_id}
+        data={loading ? Array(6).fill({}) : places}
+        keyExtractor={(_, i) => i.toString()}
         numColumns={2}
         columnWrapperStyle={{ justifyContent: "space-between" }}
-        renderItem={({ item }) => {
-          const photoRef = item.photos?.[0]?.photo_reference;
-
-          const imageUrl = photoRef
-            ? getPhotoUrl(photoRef)
-            : "https://picsum.photos/300";
-
-          const fav = isFavorite(item.place_id);
-
-          return (
-            <TouchableOpacity
-              style={styles.cardWrapper}
-              onPress={() =>
-                navigation.navigate("Explore", {
-                  screen: "PlaceDetails",
-                  params: { placeId: item.place_id },
-                })
-              }
-            >
-              <View style={styles.card}>
-                {/* IMAGE */}
-                <Image source={{ uri: imageUrl }} style={styles.image} />
-
-                {/* ❤️ FAVORITE */}
-                <TouchableOpacity
-                  style={styles.heart}
-                  onPress={() => toggleFavorite(item)}
-                >
-                  <Ionicons
-                    name={fav ? "heart" : "heart-outline"}
-                    size={18}
-                    color="red"
-                  />
-                </TouchableOpacity>
-
-                {/* CONTENT */}
-                <View style={styles.content}>
-                  <Text numberOfLines={1} style={styles.name}>
-                    {item.name}
-                  </Text>
-
-                  <Text numberOfLines={1} style={styles.location}>
-                    {item.vicinity}
-                  </Text>
-
-                  <View style={styles.row}>
-                    <Ionicons name="star" size={14} color="#F59E0B" />
-                    <Text style={styles.rating}>
-                      {item.rating || "N/A"}
-                    </Text>
-                  </View>
-                </View>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
+        renderItem={loading ? () => <ShimmerCard /> : renderItem}
+        showsVerticalScrollIndicator={false}
         ListEmptyComponent={
-          <Text style={styles.empty}>No nearby places found</Text>
+          !loading ? (
+            <Text style={styles.empty}>
+              No nearby places found
+            </Text>
+          ) : null
         }
       />
     </View>
   );
 }
 
+// =========================
+// 🎨 STYLES
+// =========================
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -163,6 +215,7 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 120,
+    backgroundColor: "#ddd",
   },
 
   heart: {
@@ -199,15 +252,31 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 
-  center: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
   empty: {
     textAlign: "center",
     marginTop: 20,
     color: COLORS.subText,
+  },
+
+  // 🔥 SHIMMER
+  shimmerOverlay: {
+    position: "absolute",
+    width: "50%",
+    height: "100%",
+    backgroundColor: "rgba(255,255,255,0.5)",
+  },
+
+  shimmerLine: {
+    height: 12,
+    backgroundColor: "#e0e0e0",
+    marginBottom: 6,
+    borderRadius: 4,
+  },
+
+  shimmerLineSmall: {
+    height: 10,
+    width: "60%",
+    backgroundColor: "#e0e0e0",
+    borderRadius: 4,
   },
 });

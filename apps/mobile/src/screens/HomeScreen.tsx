@@ -76,7 +76,7 @@ const HomeScreen = () => {
           <HeroVideo />
 
           <View style={styles.header}>
-            <Text style={styles.title}>Explore India 🇮🇳</Text>
+            <Text style={styles.title}>Explore India</Text>
             <Text style={styles.subtitle}>
               Discover states & tourist destinations
             </Text>

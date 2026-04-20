@@ -7,7 +7,7 @@ import HomeScreen from "../screens/HomeScreen";
 import DistrictScreen from "../screens/DistrictScreen";
 import PlacesScreen from "../screens/PlacesScreen";
 import PlaceDetailsScreen from "../screens/PlaceDetailsScreen";
-import NearbyScreen from "../screens/NearbyScreen"; // ✅ IMPORTANT
+import NearbyScreen from "../screens/NearbyScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 
 const Stack = createNativeStackNavigator();
@@ -17,7 +17,11 @@ const Tab = createBottomTabNavigator();
 function ExploreStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: false }} // ✅ already correct
+      />
       <Stack.Screen name="Districts" component={DistrictScreen} />
       <Stack.Screen name="Places" component={PlacesScreen} />
       <Stack.Screen name="PlaceDetails" component={PlaceDetailsScreen} />
@@ -29,7 +33,11 @@ function ExploreStack() {
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false, // 🔥 THIS FIXES "Explore" at top
+        }}
+      >
         <Tab.Screen name="Explore" component={ExploreStack} />
         <Tab.Screen name="Nearby" component={NearbyScreen} />
         <Tab.Screen name="Favorites" component={FavoritesScreen} />

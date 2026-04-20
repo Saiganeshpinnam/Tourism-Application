@@ -46,7 +46,7 @@ export default function Home() {
       {/* HEADER */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-4xl font-bold">
-          Explore India 🇮🇳
+          Explore India
         </h1>
 
         <Link href="/favorites">
