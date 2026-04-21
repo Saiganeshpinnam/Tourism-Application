@@ -1,56 +1,194 @@
-# Welcome to your Expo app 👋
+# 📱 Tourism Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern **React Native (Expo)** mobile application to explore tourist places across India 🇮🇳.
+Users can browse states, districts, places, view details, nearby locations, and save favorites.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+* 🌍 Explore all Indian states
+* 🏙️ Browse districts dynamically
+* 📍 View tourist places using Google Places API
+* 🔍 Search places in real-time
+* ❤️ Save & manage favorites
+* 📸 Image gallery with swipe + zoom
+* 🧭 Open directions in Google Maps
+* 📍 Nearby places using GPS
+* 🎥 Hero video (optional UI enhancement)
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🏗️ Tech Stack
 
-In the output, you'll find options to open the app in a
+* **Frontend (Mobile)**: React Native + Expo
+* **Navigation**: React Navigation (Stack + Bottom Tabs)
+* **Backend**: Spring Boot (Java)
+* **API**: Google Maps Places API
+* **State Management**: Context API
+* **Styling**: React Native StyleSheet
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📁 Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+src/
+ ├── components/        # Reusable UI components
+ │    ├── ImageCarousel.tsx
+ │    ├── PlaceCard.tsx
+ │    └── HeroVideo.tsx
+ │
+ ├── screens/           # App screens
+ │    ├── HomeScreen.tsx
+ │    ├── DistrictScreen.tsx
+ │    ├── PlacesScreen.tsx
+ │    ├── PlaceDetailsScreen.tsx
+ │    ├── NearbyScreen.tsx
+ │    └── FavoritesScreen.tsx
+ │
+ ├── navigation/        # Navigation setup
+ │    └── AppNavigator.tsx
+ │
+ ├── services/          # API calls
+ │    └── api.ts
+ │
+ ├── context/           # Global state (favorites)
+ │    └── FavoritesContext.tsx
+ │
+ ├── styles/            # Theme & constants
+ │    └── theme.ts
+ │
+ └── data/              # Static fallback data
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
+### 2️⃣ Install dependencies
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```bash
+npm install
+```
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3️⃣ Start the app
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+Scan the QR code using **Expo Go** (Android/iOS).
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🌐 Backend Setup
+
+Make sure your Spring Boot backend is running:
+
+```
+http://localhost:8080
+```
+
+---
+
+## 🔗 Update API Base URL
+
+Edit:
+
+```
+src/services/api.ts
+```
+
+```ts
+const BASE_URL =
+  Platform.OS === "web"
+    ? "http://localhost:8080"
+    : "http://YOUR_IP:8080"; // replace with your local IP
+```
+
+👉 Example:
+
+```ts
+"http://192.168.29.236:8080"
+```
+
+---
+
+## 🔑 Google Maps API
+
+Enable these APIs in Google Cloud:
+
+* Places API
+* Places Details API
+* Nearby Search API
+* Photos API
+
+Add your API key in backend (NOT in frontend).
+
+---
+
+## 📦 Build APK / App
+
+### Android
+
+```bash
+npx expo run:android
+```
+
+OR
+
+```bash
+npx expo build:android
+```
+
+---
+
+## 🧠 Best Practices
+
+* ⚠️ Do NOT expose Google API keys in frontend
+* ✅ Use backend proxy (already implemented)
+* 🚀 Add caching to reduce API cost
+* 🔒 Restrict API key usage in Google Cloud
+
+---
+
+## 💰 Cost Optimization
+
+* Google gives **$200/month free credit**
+* Avoid unnecessary API calls
+* Cache responses in backend
+* Limit results (5–10 places only)
+
+---
+
+## 🛠️ Future Improvements
+
+* 🗺️ Map integration inside app
+* ⭐ User reviews & ratings
+* 📅 Trip planner
+* 🏨 Real hotel booking API
+* 🌐 Offline support
+* 🔔 Notifications
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!
+For major changes, please open an issue first.
+
+---
+
+## 📄 License
+
+This project is for learning and development purposes.
+
+---
+
+## 👨‍💻 Author
+
+**Ganesh Pinnam**
+Tourism Platform Project 🚀
+
+---
