@@ -9,8 +9,8 @@ import {
   StyleSheet,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import ShimmerCard from "../components/ShimmerCard";
 
+import ShimmerCard from "../components/ShimmerCard";
 import { searchGooglePlaces, getPhotoUrl } from "../services/api";
 import { COLORS, SPACING, RADIUS } from "../styles/theme";
 import { useFavorites } from "../context/FavoritesContext";
@@ -39,7 +39,7 @@ export default function PlacesScreen({ route, navigation }: any) {
 
         setPlaces(data?.results || []);
       } catch (err) {
-        console.error(err);
+        console.error("Places error:", err);
       } finally {
         setLoading(false);
       }
@@ -49,9 +49,10 @@ export default function PlacesScreen({ route, navigation }: any) {
   }, [state, district]);
 
   const filtered = places.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase())
+    p?.name?.toLowerCase().includes(search.toLowerCase())
   );
 
+  // 🔄 LOADING UI
   if (loading) {
     return (
       <FlatList
@@ -85,19 +86,21 @@ export default function PlacesScreen({ route, navigation }: any) {
         data={filtered}
         keyExtractor={(item) => item.place_id}
         numColumns={2}
+        showsVerticalScrollIndicator={false}
         columnWrapperStyle={{ justifyContent: "space-between" }}
         renderItem={({ item }) => {
           const photoRef = item.photos?.[0]?.photo_reference;
 
           const imageUrl = photoRef
             ? getPhotoUrl(photoRef)
-            : "https://picsum.photos/300";
+            : "https://images.unsplash.com/photo-1507525428034-b723cf961d3e";
 
           const fav = isFavorite(item.place_id);
 
           return (
             <TouchableOpacity
               style={styles.cardWrapper}
+              activeOpacity={0.9}
               onPress={() =>
                 navigation.navigate("PlaceDetails", {
                   placeId: item.place_id,
@@ -105,7 +108,15 @@ export default function PlacesScreen({ route, navigation }: any) {
               }
             >
               <View style={styles.card}>
+                {/* IMAGE */}
                 <Image source={{ uri: imageUrl }} style={styles.image} />
+
+                {/* ⭐ RATING */}
+                <View style={styles.rating}>
+                  <Text style={styles.ratingText}>
+                    ⭐ {item.rating || "N/A"}
+                  </Text>
+                </View>
 
                 {/* ❤️ FAVORITE */}
                 <TouchableOpacity
@@ -115,17 +126,18 @@ export default function PlacesScreen({ route, navigation }: any) {
                   <Ionicons
                     name={fav ? "heart" : "heart-outline"}
                     size={18}
-                    color="red"
+                    color={fav ? "red" : "#333"}
                   />
                 </TouchableOpacity>
 
+                {/* CONTENT */}
                 <View style={styles.content}>
                   <Text numberOfLines={1} style={styles.name}>
                     {item.name}
                   </Text>
 
                   <Text numberOfLines={1} style={styles.location}>
-                    {item.vicinity}
+                    {item.vicinity || item.formatted_address}
                   </Text>
                 </View>
               </View>
@@ -145,7 +157,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: "800",
     marginBottom: SPACING.md,
   },
@@ -174,11 +186,27 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.lg,
     marginBottom: SPACING.md,
     overflow: "hidden",
+    elevation: 4, // 🔥 shadow Android
   },
 
   image: {
     width: "100%",
-    height: 120,
+    height: 140,
+  },
+
+  rating: {
+    position: "absolute",
+    top: 8,
+    left: 8,
+    backgroundColor: "rgba(0,0,0,0.7)",
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    borderRadius: 8,
+  },
+
+  ratingText: {
+    color: "#fff",
+    fontSize: 11,
   },
 
   heart: {
@@ -196,10 +224,12 @@ const styles = StyleSheet.create({
 
   name: {
     fontWeight: "700",
+    fontSize: 14,
   },
 
   location: {
-    fontSize: 12,
+    fontSize: 11,
     color: COLORS.subText,
+    marginTop: 2,
   },
 });

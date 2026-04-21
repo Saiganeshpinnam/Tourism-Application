@@ -84,7 +84,7 @@ export default function FavoritesScreen({ navigation }: any) {
       <TouchableOpacity
         style={styles.cardWrapper}
         onPress={() =>
-          navigation.navigate("Explore", {
+          navigation.navigate("Home", {
             screen: "PlaceDetails",
             params: { placeId: item.place_id },
           })

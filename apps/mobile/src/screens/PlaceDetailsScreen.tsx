@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
-  Image,
   ScrollView,
   TouchableOpacity,
   StyleSheet,
@@ -10,58 +9,32 @@ import {
   StatusBar,
   FlatList,
   Alert,
+  Platform,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 import { getPlaceDetails, getPhotoUrl } from "../services/api";
 import { COLORS, SPACING, RADIUS } from "../styles/theme";
 import { useFavorites } from "../context/FavoritesContext";
+import ImageCarousel from "../components/ImageCarousel";
 
 // 🏨 DUMMY HOTELS
 const dummyHotels = [
-  {
-    id: "1",
-    name: "Grand Palace Hotel",
-    image: "https://picsum.photos/300?1",
-    rating: 4.5,
-    price: "₹2500/night",
-    phone: "919876543210",
-  },
-  {
-    id: "2",
-    name: "City View Residency",
-    image: "https://picsum.photos/300?2",
-    rating: 4.2,
-    price: "₹1800/night",
-    phone: "919876543211",
-  },
-  {
-    id: "3",
-    name: "Royal Stay Inn",
-    image: "https://picsum.photos/300?3",
-    rating: 4.6,
-    price: "₹3200/night",
-    phone: "919876543212",
-  },
-  {
-    id: "4",
-    name: "Budget Comfort Hotel",
-    image: "https://picsum.photos/300?4",
-    rating: 4.0,
-    price: "₹1200/night",
-    phone: "919876543213",
-  },
+  { id: "1", name: "Grand Palace Hotel", image: "https://res.cloudinary.com/do3uk8wnj/image/upload/v1776665716/177666553255048815_z7calr.jpg", rating: 4.5, price: "₹2500/night", phone: "919876543210" },
+  { id: "2", name: "City View Residency", image: "https://res.cloudinary.com/do3uk8wnj/image/upload/v1776665905/17766658360112816d_spc880.jpg", rating: 4.2, price: "₹1800/night", phone: "919876543211" },
+  { id: "3", name: "Royal Stay Inn", image: "https://res.cloudinary.com/do3uk8wnj/image/upload/v1776666073/17766660201311293c_cujae9.jpg", rating: 4.6, price: "₹3200/night", phone: "919876543212" },
+  { id: "4", name: "Budget Comfort Hotel", image: "https://res.cloudinary.com/do3uk8wnj/image/upload/v1776666187/1776666166610318db_csdcat.jpg", rating: 4.0, price: "₹1200/night", phone: "919876543213" },
 ];
 
 export default function PlaceDetailsScreen({ route, navigation }: any) {
   const { placeId } = route.params;
-  const [place, setPlace] = useState<any>(null);
 
+  const [place, setPlace] = useState<any>(null);
   const { toggleFavorite, isFavorite } = useFavorites();
 
   useEffect(() => {
     getPlaceDetails(placeId).then((data) => {
-      setPlace(data.result);
+      setPlace(data?.result);
     });
   }, [placeId]);
 
@@ -75,39 +48,43 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
 
   const fav = isFavorite(place.place_id);
 
-  const photoRef = place.photos?.[0]?.photo_reference;
-  const imageUrl = photoRef
-    ? getPhotoUrl(photoRef)
-    : "https://picsum.photos/500";
+  // 🔥 OPTIMIZED IMAGES (IMPORTANT)
+  const images =
+    place.photos?.slice(0, 6).map((p: any) =>
+      getPhotoUrl(p.photo_reference)
+    ) || ["https://picsum.photos/600"];
 
   const lat = place.geometry?.location?.lat;
   const lng = place.geometry?.location?.lng;
 
-  // 🚀 BEST NAVIGATION METHOD
-  function openGoogleMaps() {
+  // 📍 MAP NAVIGATION
+  async function openGoogleMaps() {
     if (!lat || !lng) {
       Alert.alert("Error", "Location not available");
       return;
     }
 
-    // 🔥 REAL GPS NAVIGATION
-    const url = `google.navigation:q=${lat},${lng}`;
+    const webUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
-    Linking.openURL(url).catch(() => {
-      // fallback (browser)
-      const webUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
-      Linking.openURL(webUrl);
-    });
-  }
+    try {
+      if (Platform.OS !== "web") {
+        const appUrl =
+          Platform.OS === "ios"
+            ? `comgooglemaps://?daddr=${lat},${lng}`
+            : `google.navigation:q=${lat},${lng}`;
 
-  function callHotel(phone: string) {
-    Linking.openURL(`tel:${phone}`);
-  }
+        const supported = await Linking.canOpenURL(appUrl);
 
-  function openWhatsApp(phone: string, name: string) {
-    const msg = `Hi, I found ${name} on Tourism App. I want to book a room.`;
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-    Linking.openURL(url);
+        if (supported) {
+          await Linking.openURL(appUrl);
+          return;
+        }
+      }
+
+      await Linking.openURL(webUrl);
+    } catch {
+      Alert.alert("Error", "Unable to open maps");
+    }
   }
 
   return (
@@ -115,11 +92,14 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
       <StatusBar barStyle="light-content" />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* HERO */}
+        
+        {/* 🔥 HERO CAROUSEL */}
         <View style={styles.hero}>
-          <Image source={{ uri: imageUrl }} style={styles.image} />
+          <ImageCarousel images={images} />
+
           <View style={styles.overlay} />
 
+          {/* 🔙 + ❤️ */}
           <View style={styles.topBar}>
             <TouchableOpacity
               style={styles.iconBtn}
@@ -140,15 +120,14 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
             </TouchableOpacity>
           </View>
 
+          {/* TEXT */}
           <View style={styles.heroText}>
             <Text style={styles.title}>{place.name}</Text>
-            <Text style={styles.rating}>
-              ⭐ {place.rating || "N/A"}
-            </Text>
+            <Text style={styles.rating}>⭐ {place.rating || "N/A"}</Text>
           </View>
         </View>
 
-        {/* DETAILS */}
+        {/* 📄 DETAILS */}
         <View style={styles.content}>
           <Text style={styles.sectionTitle}>About</Text>
           <Text style={styles.description}>
@@ -157,16 +136,17 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
           </Text>
 
           {/* 🏨 HOTELS */}
-          <Text style={styles.sectionTitle}>🏨 Nearby Hotels</Text>
+          <Text style={styles.sectionTitle}>Nearby Hotels</Text>
 
           <FlatList
-            data={dummyHotels}
             horizontal
-            showsHorizontalScrollIndicator={false}
+            data={dummyHotels}
             keyExtractor={(item) => item.id}
+            showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => (
               <View style={styles.hotelCard}>
-                <Image source={{ uri: item.image }} style={styles.hotelImage} />
+                <ImageCarousel images={[item.image]} />
+
                 <View style={styles.hotelContent}>
                   <Text style={styles.hotelName}>{item.name}</Text>
                   <Text>⭐ {item.rating}</Text>
@@ -175,14 +155,18 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
                   <View style={styles.btnRow}>
                     <TouchableOpacity
                       style={styles.whatsappBtn}
-                      onPress={() => openWhatsApp(item.phone, item.name)}
+                      onPress={() =>
+                        Linking.openURL(`https://wa.me/${item.phone}`)
+                      }
                     >
                       <Ionicons name="logo-whatsapp" size={16} color="#fff" />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                       style={styles.callBtn}
-                      onPress={() => callHotel(item.phone)}
+                      onPress={() =>
+                        Linking.openURL(`tel:${item.phone}`)
+                      }
                     >
                       <Ionicons name="call" size={16} color="#fff" />
                     </TouchableOpacity>
@@ -194,7 +178,7 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
         </View>
       </ScrollView>
 
-      {/* NAVIGATE BUTTON */}
+      {/* 🚀 BOTTOM CTA */}
       <View style={styles.bottomBar}>
         <TouchableOpacity style={styles.navigateBtn} onPress={openGoogleMaps}>
           <Ionicons name="navigate" size={18} color="#fff" />
@@ -208,15 +192,9 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
 const styles = StyleSheet.create({
   hero: { height: 300 },
 
-  image: {
-    width: "100%",
-    height: "100%",
-    position: "absolute",
-  },
-
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(0,0,0,0.4)",
+    backgroundColor: "rgba(0,0,0,0.35)",
   },
 
   topBar: {
@@ -253,7 +231,6 @@ const styles = StyleSheet.create({
 
   content: {
     padding: SPACING.lg,
-    backgroundColor: COLORS.background,
   },
 
   sectionTitle: {
@@ -274,11 +251,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     overflow: "hidden",
     elevation: 3,
-  },
-
-  hotelImage: {
-    width: "100%",
-    height: 120,
   },
 
   hotelContent: {
