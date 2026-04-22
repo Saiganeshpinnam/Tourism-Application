@@ -17,6 +17,7 @@ import { getPlaceDetails, getPhotoUrl } from "../services/api";
 import { COLORS, SPACING, RADIUS } from "../styles/theme";
 import { useFavorites } from "../context/FavoritesContext";
 import ImageCarousel from "../components/ImageCarousel";
+import * as Location from "expo-location";
 
 // 🏨 DUMMY HOTELS
 const dummyHotels = [
@@ -58,34 +59,38 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
   const lng = place.geometry?.location?.lng;
 
   // 📍 MAP NAVIGATION
-  async function openGoogleMaps() {
+
+
+async function openGoogleMaps() {
+  try {
     if (!lat || !lng) {
-      Alert.alert("Error", "Location not available");
+      Alert.alert("Error", "Destination not available");
       return;
     }
 
-    const webUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+    // 🔥 Ask permission
+    const { status } = await Location.requestForegroundPermissionsAsync();
 
-    try {
-      if (Platform.OS !== "web") {
-        const appUrl =
-          Platform.OS === "ios"
-            ? `comgooglemaps://?daddr=${lat},${lng}`
-            : `google.navigation:q=${lat},${lng}`;
-
-        const supported = await Linking.canOpenURL(appUrl);
-
-        if (supported) {
-          await Linking.openURL(appUrl);
-          return;
-        }
-      }
-
-      await Linking.openURL(webUrl);
-    } catch {
-      Alert.alert("Error", "Unable to open maps");
+    if (status !== "granted") {
+      Alert.alert("Permission denied", "Location required");
+      return;
     }
+
+    // 📍 Get current location
+    const location = await Location.getCurrentPositionAsync({});
+
+    const currentLat = location.coords.latitude;
+    const currentLng = location.coords.longitude;
+
+    // ✅ Proper Google Maps URL with origin + destination
+    const url = `https://www.google.com/maps/dir/?api=1&origin=${currentLat},${currentLng}&destination=${lat},${lng}&travelmode=driving`;
+
+    await Linking.openURL(url);
+
+  } catch (error) {
+    Alert.alert("Error", "Unable to fetch location");
   }
+}
 
   return (
     <View style={{ flex: 1 }}>
