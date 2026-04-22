@@ -9,7 +9,6 @@ import {
   StatusBar,
   FlatList,
   Alert,
-  Platform,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -31,6 +30,8 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
   const { placeId } = route.params;
 
   const [place, setPlace] = useState<any>(null);
+  const [loadingLocation, setLoadingLocation] = useState(false);
+
   const { toggleFavorite, isFavorite } = useFavorites();
 
   useEffect(() => {
@@ -49,7 +50,6 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
 
   const fav = isFavorite(place.place_id);
 
-  // 🔥 OPTIMIZED IMAGES (IMPORTANT)
   const images =
     place.photos?.slice(0, 6).map((p: any) =>
       getPhotoUrl(p.photo_reference)
@@ -58,53 +58,55 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
   const lat = place.geometry?.location?.lat;
   const lng = place.geometry?.location?.lng;
 
-  // 📍 MAP NAVIGATION
+  // 🚀 NAVIGATION FIXED
+  async function openGoogleMaps() {
+    if (loadingLocation) return;
 
+    try {
+      setLoadingLocation(true);
 
-async function openGoogleMaps() {
-  try {
-    if (!lat || !lng) {
-      Alert.alert("Error", "Destination not available");
-      return;
+      if (!lat || !lng) {
+        Alert.alert("Error", "Destination not available");
+        return;
+      }
+
+      const { status } =
+        await Location.requestForegroundPermissionsAsync();
+
+      if (status !== "granted") {
+        Alert.alert("Permission denied", "Location required");
+        return;
+      }
+
+      const location = await Location.getCurrentPositionAsync({
+        accuracy: Location.Accuracy.Balanced, // ⚡ faster
+      });
+
+      const currentLat = location.coords.latitude;
+      const currentLng = location.coords.longitude;
+
+      const url = `https://www.google.com/maps/dir/?api=1&origin=${currentLat},${currentLng}&destination=${lat},${lng}&travelmode=driving`;
+
+      await Linking.openURL(url);
+    } catch (error) {
+      Alert.alert("Error", "Unable to fetch location");
+    } finally {
+      setLoadingLocation(false);
     }
-
-    // 🔥 Ask permission
-    const { status } = await Location.requestForegroundPermissionsAsync();
-
-    if (status !== "granted") {
-      Alert.alert("Permission denied", "Location required");
-      return;
-    }
-
-    // 📍 Get current location
-    const location = await Location.getCurrentPositionAsync({});
-
-    const currentLat = location.coords.latitude;
-    const currentLng = location.coords.longitude;
-
-    // ✅ Proper Google Maps URL with origin + destination
-    const url = `https://www.google.com/maps/dir/?api=1&origin=${currentLat},${currentLng}&destination=${lat},${lng}&travelmode=driving`;
-
-    await Linking.openURL(url);
-
-  } catch (error) {
-    Alert.alert("Error", "Unable to fetch location");
   }
-}
 
   return (
     <View style={{ flex: 1 }}>
       <StatusBar barStyle="light-content" />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        
-        {/* 🔥 HERO CAROUSEL */}
+        {/* 🔥 HERO */}
         <View style={styles.hero}>
           <ImageCarousel images={images} />
 
           <View style={styles.overlay} />
 
-          {/* 🔙 + ❤️ */}
+          {/* TOP BAR */}
           <View style={styles.topBar}>
             <TouchableOpacity
               style={styles.iconBtn}
@@ -132,7 +134,7 @@ async function openGoogleMaps() {
           </View>
         </View>
 
-        {/* 📄 DETAILS */}
+        {/* DETAILS */}
         <View style={styles.content}>
           <Text style={styles.sectionTitle}>About</Text>
           <Text style={styles.description}>
@@ -140,7 +142,7 @@ async function openGoogleMaps() {
               `${place.name} is a popular tourist destination.`}
           </Text>
 
-          {/* 🏨 HOTELS */}
+          {/* HOTELS */}
           <Text style={styles.sectionTitle}>Nearby Hotels</Text>
 
           <FlatList
@@ -183,11 +185,22 @@ async function openGoogleMaps() {
         </View>
       </ScrollView>
 
-      {/* 🚀 BOTTOM CTA */}
+      {/* 🚀 BUTTON */}
       <View style={styles.bottomBar}>
-        <TouchableOpacity style={styles.navigateBtn} onPress={openGoogleMaps}>
+        <TouchableOpacity
+          style={[
+            styles.navigateBtn,
+            loadingLocation && { opacity: 0.6 },
+          ]}
+          onPress={openGoogleMaps}
+          disabled={loadingLocation}
+        >
           <Ionicons name="navigate" size={18} color="#fff" />
-          <Text style={styles.navigateText}>Start Navigation</Text>
+          <Text style={styles.navigateText}>
+            {loadingLocation
+              ? "Fetching location..."
+              : "Start Navigation"}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -319,3 +332,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+
