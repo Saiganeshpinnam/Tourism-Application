@@ -18,15 +18,22 @@ public class JwtFilter extends OncePerRequestFilter {
     private JwtUtil jwtUtil;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain)
-            throws ServletException, IOException {
+    protected void doFilterInternal(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            FilterChain filterChain
+    ) throws ServletException, IOException {
 
         String path = request.getRequestURI();
 
-        // ✅ Allow auth endpoints without token
-        if (path.startsWith("/auth")) {
+        // ✅ Public routes (NO TOKEN REQUIRED)
+        if (
+            path.startsWith("/auth") ||
+            path.startsWith("/api/auth") ||
+            path.startsWith("/places") ||
+            path.startsWith("/google") ||
+            path.startsWith("/h2-console")
+        ) {
             filterChain.doFilter(request, response);
             return;
         }
@@ -35,21 +42,19 @@ public class JwtFilter extends OncePerRequestFilter {
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Missing or invalid token");
+            response.getWriter().write("Missing token");
             return;
         }
 
-        String token = authHeader.substring(7);
-
         try {
-            String email = jwtUtil.extractEmail(token);
+            String token = authHeader.substring(7);
+            jwtUtil.extractEmail(token);
 
-            // ✅ Token valid → allow request
             filterChain.doFilter(request, response);
 
         } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Invalid or expired token");
+            response.getWriter().write("Invalid token");
         }
     }
 }
