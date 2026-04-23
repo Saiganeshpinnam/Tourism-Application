@@ -1,12 +1,10 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { FavoritesProvider } from "./src/context/FavoritesContext";
-import { useEffect } from "react";
+import { AuthProvider } from "./src/context/AuthContext"; // ✅ NEW
 import * as ScreenCapture from "expo-screen-capture";
 import AppNavigator from "./src/navigation/AppNavigator";
 
 export default function App() {
-
   useEffect(() => {
     ScreenCapture.preventScreenCaptureAsync();
 
@@ -15,9 +13,13 @@ export default function App() {
     };
   }, []);
 
-  return  (<FavoritesProvider>
-   <AppNavigator />
- </FavoritesProvider>)
+  return (
+    <AuthProvider> {/* ✅ Wrap Auth FIRST */}
+      <FavoritesProvider>
+        <AppNavigator />
+      </FavoritesProvider>
+    </AuthProvider>
+  );
 }
 
 

@@ -16,32 +16,33 @@ public class CorsConfig {
 
                 registry.addMapping("/**")
 
-                        // ✅ Allow ALL dev environments (best for now)
-                        .allowedOriginPatterns("*")
-
-                        // OR if you want strict control, use this instead:
-                        /*
-                        .allowedOrigins(
-                                "http://localhost:3000",
-                                "http://127.0.0.1:3000",
-                                "http://localhost:8081",
-                                "http://127.0.0.1:8081"
+                        // ✅ Allow mobile (Expo), web, and local dev
+                        .allowedOriginPatterns(
+                                "*"
+                                // 👉 Later (production), replace with:
+                                // "https://yourdomain.com",
+                                // "http://localhost:3000"
                         )
-                        */
 
-                        // ✅ Allow all HTTP methods
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        // ✅ Allow all common HTTP methods
+                        .allowedMethods(
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "DELETE",
+                                "OPTIONS"
+                        )
 
                         // ✅ Allow all headers
                         .allowedHeaders("*")
 
-                        // ✅ Expose headers if needed
-                        .exposedHeaders("*")
+                        // ✅ Expose headers (for JWT later)
+                        .exposedHeaders("Authorization")
 
-                        // ✅ Important for cookies/auth (keep false for now)
+                        // ❗ Keep false for now (we use token, not cookies)
                         .allowCredentials(false)
 
-                        // ✅ Cache preflight response
+                        // ✅ Cache preflight (improves performance)
                         .maxAge(3600);
             }
         };
