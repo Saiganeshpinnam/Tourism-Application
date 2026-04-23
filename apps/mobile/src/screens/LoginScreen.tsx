@@ -18,15 +18,13 @@ import * as WebBrowser from "expo-web-browser";
 WebBrowser.maybeCompleteAuthSession();
 
 const LoginScreen = ({ navigation }: any) => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-
-  const [error, setError] = useState<string>(""); // ✅ NEW
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const { login: setLogin } = useContext(AuthContext);
 
-  // Google (only mobile)
-  let request: any = null;
+  // Google (mobile only)
   let response: any = null;
   let promptAsync: any = null;
 
@@ -36,20 +34,19 @@ const LoginScreen = ({ navigation }: any) => {
       androidClientId: "YOUR_ANDROID_CLIENT_ID",
     });
 
-    request = googleAuth[0];
     response = googleAuth[1];
     promptAsync = googleAuth[2];
   }
 
   useEffect(() => {
     if (response?.type === "success") {
-      setLogin();
+      setLogin("google-token"); // placeholder
     }
   }, [response]);
 
-  // 🔹 LOGIN FUNCTION
+  // ✅ LOGIN
   const handleLogin = async () => {
-    setError(""); // ✅ clear old error
+    setError("");
 
     if (!validateEmail(email)) {
       setError("Invalid email format");
@@ -64,9 +61,8 @@ const LoginScreen = ({ navigation }: any) => {
     const res = await login(email, password);
 
     if (res.token) {
-      setLogin();
+      await setLogin(res.token); // ✅ JWT stored
     } else {
-      // ✅ SHOW BACKEND MESSAGE
       setError(res.message || "Login failed");
     }
   };
@@ -75,7 +71,6 @@ const LoginScreen = ({ navigation }: any) => {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome Back 👋</Text>
 
-      {/* Email */}
       <TextInput
         style={styles.input}
         placeholder="Enter Email"
@@ -85,7 +80,6 @@ const LoginScreen = ({ navigation }: any) => {
         autoCapitalize="none"
       />
 
-      {/* Password */}
       <TextInput
         style={styles.input}
         placeholder="Enter Password"
@@ -94,15 +88,14 @@ const LoginScreen = ({ navigation }: any) => {
         secureTextEntry
       />
 
-      {/* ❗ ERROR MESSAGE (KEY PART) */}
+      {/* ✅ ERROR MESSAGE */}
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-      {/* Login Button */}
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
 
-      {/* Google (mobile only) */}
+      {/* Google Login */}
       {Platform.OS !== "web" && (
         <TouchableOpacity
           style={styles.googleButton}
@@ -112,7 +105,6 @@ const LoginScreen = ({ navigation }: any) => {
         </TouchableOpacity>
       )}
 
-      {/* Signup */}
       <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
         <Text style={styles.signupText}>
           Don't have an account? Sign Up
@@ -124,7 +116,6 @@ const LoginScreen = ({ navigation }: any) => {
 
 export default LoginScreen;
 
-// 🎨 Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -147,8 +138,8 @@ const styles = StyleSheet.create({
   },
   errorText: {
     color: "red",
-    marginBottom: 10,
     textAlign: "center",
+    marginBottom: 10,
     fontWeight: "500",
   },
   button: {

@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.config.JwtUtil;
 import com.example.demo.dto.AuthRequest;
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
@@ -12,6 +13,9 @@ public class AuthService {
 
     @Autowired
     private UserRepository repo;
+
+    @Autowired
+    private JwtUtil jwtUtil; // ✅ NEW
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
@@ -31,7 +35,7 @@ public class AuthService {
         return "User registered successfully";
     }
 
-    // ✅ LOGIN
+    // ✅ LOGIN (JWT GENERATED HERE)
     public String login(AuthRequest request) {
 
         User user = repo.findByEmail(request.email).orElse(null);
@@ -44,6 +48,7 @@ public class AuthService {
             throw new RuntimeException("Invalid password");
         }
 
-        return "dummy-token"; // later replace with JWT
+        // 🔐 Generate JWT token
+        return jwtUtil.generateToken(user.getEmail());
     }
 }
