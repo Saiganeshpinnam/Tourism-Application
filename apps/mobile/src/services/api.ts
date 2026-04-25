@@ -1,10 +1,8 @@
 import { Platform } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const BASE_URL =
-  Platform.OS === "web"
-    ? "http://localhost:8080"
-    : "http://192.168.29.236:8080";
+//const BASE_URL = "http://16.112.64.144:8080";
+const BASE_URL = "http://localhost:8080";
 
 // 🔒 COMMON FETCH WITH JWT
 async function safeFetch(url: string) {

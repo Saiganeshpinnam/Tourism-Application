@@ -1,10 +1,8 @@
 import { Platform } from "react-native";
 
 // ✅ Base URL
-const BASE_URL =
-  Platform.OS === "web"
-    ? "http://localhost:8080/auth"
-    : "http://192.168.29.236:8080/auth";
+//const BASE_URL = "http://16.112.64.144:8080/auth";
+const BASE_URL = "http://localhost:8080/auth";
 
 // 🔒 Safe fetch (FIXED)
 async function safeFetch(url: string, options: RequestInit) {

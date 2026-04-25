@@ -24,12 +24,12 @@ public class JwtFilter extends OncePerRequestFilter {
             FilterChain filterChain
     ) throws ServletException, IOException {
 
-        String path = request.getRequestURI();
+        // ✅ FIX: Use getServletPath()
+        String path = request.getServletPath();
 
         // ✅ Public routes (NO TOKEN REQUIRED)
         if (
             path.startsWith("/auth") ||
-            path.startsWith("/api/auth") ||
             path.startsWith("/places") ||
             path.startsWith("/google") ||
             path.startsWith("/h2-console")
@@ -38,8 +38,10 @@ public class JwtFilter extends OncePerRequestFilter {
             return;
         }
 
+        // ✅ Get Authorization header
         String authHeader = request.getHeader("Authorization");
 
+        // ❌ If token missing
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.getWriter().write("Missing token");
@@ -47,12 +49,17 @@ public class JwtFilter extends OncePerRequestFilter {
         }
 
         try {
+            // ✅ Extract token
             String token = authHeader.substring(7);
+
+            // ✅ Validate token (will throw exception if invalid)
             jwtUtil.extractEmail(token);
 
+            // ✅ Continue request
             filterChain.doFilter(request, response);
 
         } catch (Exception e) {
+            // ❌ Invalid token
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.getWriter().write("Invalid token");
         }

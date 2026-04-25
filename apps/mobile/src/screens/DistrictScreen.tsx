@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: SPACING.md,
     backgroundColor: COLORS.background,
+    marginTop: 2,
   },
 
   header: {

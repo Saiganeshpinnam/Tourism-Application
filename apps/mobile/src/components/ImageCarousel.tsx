@@ -2,35 +2,15 @@ import React, { useState } from "react";
 import {
   View,
   FlatList,
-  Image,
   Dimensions,
   StyleSheet,
+  Image,
 } from "react-native";
-import { PinchGestureHandler } from "react-native-gesture-handler";
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
-} from "react-native-reanimated";
 
 const { width } = Dimensions.get("window");
 
-export default function ImageCarousel({ images }: any) {
+export default function ImageCarousel({ images = [] }: any) {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const scale = useSharedValue(1);
-
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }],
-  }));
-
-  const handlePinch = (event: any) => {
-    scale.value = event.nativeEvent.scale;
-  };
-
-  const handleEnd = () => {
-    scale.value = withTiming(1);
-  };
 
   return (
     <View>
@@ -47,18 +27,17 @@ export default function ImageCarousel({ images }: any) {
           setCurrentIndex(index);
         }}
         renderItem={({ item }) => (
-          <PinchGestureHandler
-            onGestureEvent={handlePinch}
-            onEnded={handleEnd}
-          >
-            <Animated.View style={[styles.imageWrapper, animatedStyle]}>
-              <Image source={{ uri: item }} style={styles.image} />
-            </Animated.View>
-          </PinchGestureHandler>
+          <View style={styles.imageWrapper}>
+            <Image
+              source={{ uri: item }}
+              style={styles.image}
+              resizeMode="cover" // 🔥 perfect fit
+            />
+          </View>
         )}
       />
 
-      {/* 🔵 DOT INDICATOR */}
+      {/* DOTS */}
       <View style={styles.dots}>
         {images.map((_: any, i: number) => (
           <View
@@ -77,17 +56,20 @@ export default function ImageCarousel({ images }: any) {
 const styles = StyleSheet.create({
   imageWrapper: {
     width,
-    height: 300,
+    height: width * 0.65, // ✅ responsive height
   },
+
   image: {
     width: "100%",
     height: "100%",
   },
+
   dots: {
     flexDirection: "row",
     justifyContent: "center",
     marginTop: 8,
   },
+
   dot: {
     width: 6,
     height: 6,
@@ -95,6 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ccc",
     margin: 4,
   },
+
   activeDot: {
     backgroundColor: "#2563eb",
   },

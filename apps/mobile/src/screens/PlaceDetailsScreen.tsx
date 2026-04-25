@@ -9,6 +9,7 @@ import {
   StatusBar,
   FlatList,
   Alert,
+  Dimensions,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -17,6 +18,8 @@ import { COLORS, SPACING, RADIUS } from "../styles/theme";
 import { useFavorites } from "../context/FavoritesContext";
 import ImageCarousel from "../components/ImageCarousel";
 import * as Location from "expo-location";
+
+const { width } = Dimensions.get("window");
 
 // 🏨 DUMMY HOTELS
 const dummyHotels = [
@@ -50,15 +53,18 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
 
   const fav = isFavorite(place.place_id);
 
+  // ✅ FIXED IMAGE HANDLING
   const images =
-    place.photos?.slice(0, 6).map((p: any) =>
-      getPhotoUrl(p.photo_reference)
-    ) || ["https://picsum.photos/600"];
+    place.photos?.length > 0
+      ? place.photos.slice(0, 6).map((p: any) =>
+          getPhotoUrl(p.photo_reference)
+        )
+      : ["https://picsum.photos/600"];
 
   const lat = place.geometry?.location?.lat;
   const lng = place.geometry?.location?.lng;
 
-  // 🚀 NAVIGATION FIXED
+  // 🚀 NAVIGATION
   async function openGoogleMaps() {
     if (loadingLocation) return;
 
@@ -79,7 +85,7 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
       }
 
       const location = await Location.getCurrentPositionAsync({
-        accuracy: Location.Accuracy.Balanced, // ⚡ faster
+        accuracy: Location.Accuracy.Balanced,
       });
 
       const currentLat = location.coords.latitude;
@@ -130,7 +136,9 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
           {/* TEXT */}
           <View style={styles.heroText}>
             <Text style={styles.title}>{place.name}</Text>
-            <Text style={styles.rating}>⭐ {place.rating || "N/A"}</Text>
+            <Text style={styles.rating}>
+              ⭐ {place.rating || "N/A"}
+            </Text>
           </View>
         </View>
 
@@ -166,7 +174,11 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
                         Linking.openURL(`https://wa.me/${item.phone}`)
                       }
                     >
-                      <Ionicons name="logo-whatsapp" size={16} color="#fff" />
+                      <Ionicons
+                        name="logo-whatsapp"
+                        size={16}
+                        color="#fff"
+                      />
                     </TouchableOpacity>
 
                     <TouchableOpacity
@@ -208,11 +220,13 @@ export default function PlaceDetailsScreen({ route, navigation }: any) {
 }
 
 const styles = StyleSheet.create({
-  hero: { height: 300 },
+  hero: {
+    height: width * 0.65, // ✅ FIXED
+  },
 
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(0,0,0,0.35)",
+    backgroundColor: "rgba(0,0,0,0.2)", // ✅ lighter
   },
 
   topBar: {
@@ -332,5 +346,3 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-
-

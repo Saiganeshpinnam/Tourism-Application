@@ -30,7 +30,7 @@ export default function NearbyScreen({ navigation }: any) {
         if (status !== "granted") {
           alert("Location permission denied");
 
-          // 🔥 fallback (Hyderabad)
+          // fallback location
           const data = await getNearbyPlaces(17.385044, 78.486671);
           setPlaces(data?.results || []);
           return;
@@ -41,16 +41,11 @@ export default function NearbyScreen({ navigation }: any) {
         const lat = location.coords.latitude;
         const lng = location.coords.longitude;
 
-        console.log("LAT:", lat, "LNG:", lng);
-
         const data = await getNearbyPlaces(lat, lng);
-        console.log("API:", data);
-
         setPlaces(data?.results || []);
       } catch (err) {
         console.error(err);
 
-        // 🔥 fallback if error
         const data = await getNearbyPlaces(17.385044, 78.486671);
         setPlaces(data?.results || []);
       } finally {
@@ -62,7 +57,7 @@ export default function NearbyScreen({ navigation }: any) {
   }, []);
 
   // =========================
-  // 🔥 SHIMMER COMPONENT
+  // 🔥 SHIMMER LOADING
   // =========================
   const ShimmerCard = () => {
     const shimmer = useRef(new Animated.Value(0)).current;
@@ -128,7 +123,7 @@ export default function NearbyScreen({ navigation }: any) {
         <View style={styles.card}>
           <Image source={{ uri: imageUrl }} style={styles.image} />
 
-          {/* ❤️ FAVORITE */}
+          {/* ❤️ Favorite */}
           <TouchableOpacity
             style={styles.heart}
             onPress={() => toggleFavorite(item)}
@@ -142,17 +137,17 @@ export default function NearbyScreen({ navigation }: any) {
 
           <View style={styles.content}>
             <Text numberOfLines={1} style={styles.name}>
-              {item.name}
+              {item.name || ""}
             </Text>
 
             <Text numberOfLines={1} style={styles.location}>
-              {item.vicinity}
+              {item.vicinity || ""}
             </Text>
 
             <View style={styles.row}>
               <Ionicons name="star" size={14} color="#F59E0B" />
               <Text style={styles.rating}>
-                {item.rating || "N/A"}
+                {item.rating ? item.rating.toString() : "N/A"}
               </Text>
             </View>
           </View>
@@ -163,7 +158,12 @@ export default function NearbyScreen({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>📍 Nearby Places</Text>
+      
+      {/* ✅ FIXED TITLE (NO EMOJI) */}
+      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: SPACING.md }}>
+        <Ionicons name="location" size={20} color="black" />
+        <Text style={styles.title}> Nearby Places</Text>
+      </View>
 
       <FlatList
         data={loading ? Array(6).fill({}) : places}
@@ -197,7 +197,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "800",
-    marginBottom: SPACING.md,
   },
 
   cardWrapper: {
@@ -258,7 +257,6 @@ const styles = StyleSheet.create({
     color: COLORS.subText,
   },
 
-  // 🔥 SHIMMER
   shimmerOverlay: {
     position: "absolute",
     width: "50%",

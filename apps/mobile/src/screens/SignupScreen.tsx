@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
+
 import { validateEmail } from "../utils/validators";
 import { signup } from "../services/authApi";
 
@@ -15,42 +16,43 @@ const SignupScreen = ({ navigation }: any) => {
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
 
- const handleSignup = async () => {
-  if (!validateEmail(email)) {
-    Alert.alert("Invalid Email");
-    return;
-  }
-
-  if (password.length < 6) {
-    Alert.alert("Password must be at least 6 characters");
-    return;
-  }
-
-  if (password !== confirmPassword) {
-    Alert.alert("Passwords do not match");
-    return;
-  }
-
-  try {
-    const res = await signup(email, password);
-
-    // ✅ SUCCESS CASE
-    if (res.message === "User registered successfully") {
-      Alert.alert("Signup Successful", "Please login now");
-      navigation.navigate("Login");
-    } else {
-      // ❗ ERROR MESSAGE FROM BACKEND
-      Alert.alert(res.message || "Signup failed");
+  const handleSignup = async () => {
+    if (!validateEmail(email)) {
+      Alert.alert("Invalid Email");
+      return;
     }
-  } catch (error) {
-    console.error(error);
-    Alert.alert("Something went wrong");
-  }
-};
+
+    if (password.length < 6) {
+      Alert.alert("Password must be at least 6 characters");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      Alert.alert("Passwords do not match");
+      return;
+    }
+
+    try {
+      const res = await signup(email, password);
+
+      // ✅ SAFE CHECK
+      if (res && res.message === "User registered successfully") {
+        Alert.alert("Signup Successful", "Please login now");
+        navigation.navigate("Login");
+      } else {
+        Alert.alert(res?.message || "Signup failed");
+      }
+    } catch (error) {
+      console.error(error);
+      Alert.alert("Something went wrong");
+    }
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Create Account 🚀</Text>
+      
+      {/* ✅ FIXED TITLE (no emoji) */}
+      <Text style={styles.title}>Create Account</Text>
 
       {/* Email */}
       <TextInput
@@ -97,7 +99,7 @@ const SignupScreen = ({ navigation }: any) => {
 
 export default SignupScreen;
 
-// 🎨 Styles (same as Login for consistency)
+// 🎨 Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -105,12 +107,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fff",
   },
+
   title: {
     fontSize: 26,
     fontWeight: "bold",
     marginBottom: 30,
     textAlign: "center",
   },
+
   input: {
     borderWidth: 1,
     borderColor: "#ccc",
@@ -118,6 +122,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginBottom: 15,
   },
+
   button: {
     backgroundColor: "#28a745",
     padding: 15,
@@ -125,10 +130,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 20,
   },
+
   buttonText: {
     color: "#fff",
     fontWeight: "bold",
   },
+
   loginText: {
     textAlign: "center",
     color: "#007bff",
